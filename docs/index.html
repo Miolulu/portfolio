@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>卢璐 · 作品集</title>
-<meta name="description" content="四件在线作品：克苏鲁像素 Roguelike《我在精神病院斩神》、情绪树洞社区《树语》、音乐玩具《喵喵音阶森林》、科幻长篇《余烬》与它的阅读器。">
+<meta name="description" content="四件作品：像素地牢《我在精神病院斩神》、情绪树洞《树语》、音乐玩具《喵喵音阶森林》、科幻长篇《余烬》。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316150f'/%3E%3Crect x='9' y='9' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='15' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='21' width='9' height='2' fill='%23faf8f4'/%3E%3C/svg%3E">
 <style>
 :root{
   --bg:#faf8f4;
+  --bg-2:#f4f0e7;
   --ink:#16150f;
   --ink-2:#3f3b33;
-  --muted:#787265;
-  --line:#e3ded2;
-  --line-2:#d3ccbb;
+  --muted:#7d7768;
+  --line:#e5e0d4;
+  --line-2:#d5cebd;
   --accent:#a8402a;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
@@ -27,12 +28,12 @@ a{color:inherit;text-decoration:none}
 ::selection{background:rgba(168,64,42,.16)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,44px)}
 
 /* 顶栏 */
-.bar{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.9);
+.bar{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);
   backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line)}
-.bar__in{display:flex;align-items:center;justify-content:space-between;height:62px}
+.bar__in{display:flex;align-items:center;justify-content:space-between;height:60px}
 .bar__id{display:flex;align-items:baseline;gap:10px}
 .bar__name{font-size:15px;font-weight:600;letter-spacing:.06em}
 .bar__role{font-size:12px;color:var(--muted);letter-spacing:.14em}
@@ -40,59 +41,59 @@ a{color:inherit;text-decoration:none}
 .bar__nav a{padding-bottom:1px;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
 .bar__nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* 引言：只交代这是几件什么 */
-.intro{padding:clamp(48px,7vw,92px) 0 clamp(30px,4vw,46px)}
-.intro__label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);margin:0 0 20px}
+/* 引言 */
+.intro{padding:clamp(46px,6.4vw,84px) 0 clamp(26px,3.4vw,40px)}
+.intro__label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);margin:0 0 18px}
 .intro h1{margin:0;font-size:clamp(30px,4.2vw,46px);line-height:1.28;font-weight:600;letter-spacing:-.02em}
-.intro p{margin:20px 0 0;max-width:40em;color:var(--ink-2);font-size:15.5px;line-height:1.9}
+.intro p{margin:18px 0 0;max-width:40em;color:var(--ink-2);font-size:15.5px;line-height:1.9}
 
-/* 作品 */
-.work{padding:clamp(34px,4.6vw,58px) 0 clamp(44px,5.6vw,72px);border-top:1px solid var(--line)}
-.work__head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin-bottom:clamp(20px,2.6vw,30px)}
+/* 作品版块 */
+.work{padding:clamp(38px,5vw,64px) 0 clamp(40px,5.4vw,70px);border-top:1px solid var(--line)}
+.work:nth-of-type(even){background:var(--bg-2)}
+.work__head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin-bottom:clamp(24px,3vw,38px)}
 .work__no{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
-.work h2{margin:0;font-size:clamp(21px,2.3vw,27px);font-weight:600;letter-spacing:-.01em;line-height:1.35}
-.work h2 small{font-size:.62em;font-weight:400;color:var(--muted);letter-spacing:.04em;margin-left:8px}
+.work h2{margin:0;font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.work__sub{flex:1 1 100%;order:3;margin:2px 0 0;color:var(--muted);font-size:13.5px;letter-spacing:.02em}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 0 auto;padding:0;list-style:none}
 .tags li{font-size:11.5px;line-height:1;color:var(--ink-2);border:1px solid var(--line-2);
   border-radius:2px;padding:5px 8px;white-space:nowrap}
 
-.shots{display:grid;gap:clamp(10px,1.4vw,18px);align-items:start}
-.shots + .shots{margin-top:clamp(10px,1.4vw,18px)}
-.shots img{width:100%;height:auto}
-.shots--pair{grid-template-columns:1fr 1fr}
-.shots--two-phone{grid-template-columns:repeat(2,minmax(0,262px));justify-content:center;gap:clamp(20px,3.4vw,44px)}
-.shots--strip{grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:clamp(16px,2.6vw,34px);
-  align-items:center;justify-items:center}
-.shots--strip img{width:auto;max-width:100%;max-height:min(540px,56vw)}
-.shots__cap{margin:10px 0 0;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+/* 手机排 */
+.phones{--gap:clamp(8px,1.2vw,18px);--cols:4;
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:var(--gap)}
+.phones--c2{--cols:2}
+.phones--c3{--cols:3}
+.phones--c4{--cols:4}
+.ph{width:calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));margin:0}
+.ph img{width:100%;height:auto}
 
-/* 树语是竖屏，图与文字并排 */
-.work__split{display:grid;grid-template-columns:minmax(0,268px) minmax(0,1fr);
-  gap:clamp(26px,4.4vw,68px);align-items:center}
-.work__split img{width:100%;height:auto}
-
-.work__body{margin-top:clamp(22px,2.6vw,30px)}
-.work__body p{margin:0;max-width:44em;color:var(--ink-2);font-size:15px;line-height:1.92}
-.work__body p + p{margin-top:10px}
-.links{display:flex;gap:22px;font-size:13.5px;margin-top:18px}
+/* 说明 */
+.desc{margin-top:clamp(26px,3.2vw,40px);display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(18px,3vw,48px);align-items:end}
+.desc p{margin:0;max-width:44em;color:var(--ink-2);font-size:15px;line-height:1.92}
+.desc p + p{margin-top:9px}
+.links{display:flex;gap:20px;font-size:13.5px;white-space:nowrap;padding-bottom:4px}
 .links a{border-bottom:1px solid var(--line-2);padding-bottom:2px;transition:color .2s,border-color .2s}
 .links a:hover{color:var(--accent);border-color:var(--accent)}
 .links .arrow{font-size:12px;opacity:.7;margin-left:2px}
 
 /* 页脚 */
-.foot{border-top:1px solid var(--line);padding:32px 0 56px;
+.foot{border-top:1px solid var(--line);padding:30px 0 54px;
   display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;
   font-size:12.5px;color:var(--muted)}
 .foot b{font-weight:500;color:var(--ink)}
 .foot .sp{flex:1;min-width:20px}
 
-@media (max-width:820px){
-  .tags{margin-left:0;order:3;flex-basis:100%}
-  .work__split{grid-template-columns:1fr;justify-items:center}
-  .work__split img{max-width:300px}
-  .work__split > div{width:100%}
-  .shots--pair{grid-template-columns:1fr}
-  .shots--two-phone{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:900px){
+  .phones{--cols:2}
+  .phones--land{--cols:1}
+  .tags{margin-left:0;order:2;flex-basis:100%}
+  .desc{grid-template-columns:1fr;align-items:start}
+}
+@media (max-width:560px){
+  .phones{--cols:2;--gap:9px}
+  .phones--land{--cols:1}
+  .work__sub{font-size:12.5px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -112,149 +113,147 @@ a{color:inherit;text-decoration:none}
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
-  <section class="intro">
+  <section class="wrap intro">
     <p class="intro__label">SELECTED WORK · 2024—2026</p>
     <h1>作品集</h1>
-    <p>四件在线作品：像素 Roguelike、情绪树洞社区、音乐玩具、科幻长篇与阅读器。</p>
+    <p>四件作品：像素地牢、情绪树洞、音乐玩具、科幻长篇。</p>
   </section>
 
   <!-- 01 -->
   <article class="work" id="zhanshen">
-    <div class="work__head">
-      <span class="work__no">01</span>
-      <h2>我在精神病院斩神 <small>Hospital Slayer</small></h2>
-      <ul class="tags">
-        <li>像素 Roguelike</li><li>横屏自动战斗</li><li>SAN 异化</li><li>H5 可试玩</li>
-      </ul>
-    </div>
+    <div class="wrap">
+      <div class="work__head">
+        <span class="work__no">01</span>
+        <h2>我在精神病院斩神</h2>
+        <ul class="tags">
+          <li>像素地牢</li><li>横屏战斗</li><li>三十层病区</li><li>可试玩</li>
+        </ul>
+        <p class="work__sub">从三十层病区的最顶上往下打，一层一层打到门口。</p>
+      </div>
 
-    <div class="shots">
-      <img src="assets/hd/zhanshen-title.webp" alt="《我在精神病院斩神》标题画面：血色的书名压在病院走廊上，下面是病历档案、主线通关、每日挑战三个入口" width="2312" height="1437">
-    </div>
-    <div class="shots shots--pair">
-      <img src="assets/hd/zhanshen-fight.webp" alt="战斗中：患者 0001 被鹿角病人围住，顶部显示第 1/6 波，左下是经验与 SAN" width="2312" height="1437" loading="lazy">
-      <img src="assets/hd/zhanshen-floor.webp" alt="楼层详情页：左侧是病房实景插画，右侧列出本层可能出现的六种敌人" width="2226" height="1386" loading="lazy">
-    </div>
-    <div class="shots shots--pair">
-      <img src="assets/hd/zhanshen-archive.webp" alt="病历档案：病人姓名、编号、症状记录与楼层进度" width="2312" height="1437" loading="lazy">
-      <img src="assets/hd/zhanshen-weapon.webp" alt="武器皮肤页：剑、枪、鞭、炮四类武器，各自的攻击范围与出手节奏" width="2226" height="1386" loading="lazy">
-    </div>
+      <div class="phones phones--land phones--c3">
+        <figure class="ph"><img src="assets/hd/zhanshen-title.webp" alt="标题画面：血色书名压在病院走廊上，下面是病历档案、主线通关、每日挑战三个入口" width="2312" height="1437"></figure>
+        <figure class="ph"><img src="assets/hd/zhanshen-fight.webp" alt="战斗画面：病人在走廊里被鹿角病人围住，顶部写着第 1/6 波" width="2312" height="1437" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/zhanshen-floor.webp" alt="楼层页：左边是病房实景，右边列出这一层会遇到的六种敌人" width="2226" height="1386" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/zhanshen-archive.webp" alt="病历档案：病人姓名、编号、症状记录与楼层进度" width="2312" height="1437" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/zhanshen-weapon.webp" alt="武器页：剑、枪、鞭、炮四类武器，各自写着攻击范围和出手节奏" width="2226" height="1386" loading="lazy"></figure>
+      </div>
 
-    <div class="work__body">
-      <p>一款克苏鲁题材的像素 Roguelike。主角是 0001 号病人，病历上写着失聪、低语幻听、对红光过敏。医院有三十层病区，从顶层往下打，打过一层才开下一层。</p>
-      <p>战斗是横屏自动攻击，玩家负责走位、捡掉落、什么时候停手。连打会持续掉 SAN，低于 30 自动进入异化：攻击力涨，护盾吸收减半，场上敌人也变多。</p>
-      <p>所有菜单都按病历做。角色页是一张病人档案，武器页叫「武器皮肤」，剑、枪、鞭、炮四类各有攻击范围和出手节奏；症状记录同时也是解锁条件。</p>
-      <p class="links">
-        <a href="https://miolulu.github.io/hospital-slayer-game/play/" target="_blank" rel="noopener">在线试玩<span class="arrow">↗</span></a>
-        <a href="zhanshen/">详情</a>
-      </p>
+      <div class="desc">
+        <div>
+          <p>你在一座精神病院醒过来，病历上写着 0001 号，失聪、低语幻听、对红光过敏。医院有三十层病区，从最上面往下打，打过一层才开下一层。</p>
+          <p>战斗自动出手，你管走位、捡掉落、什么时候撤。连打会让理智值一直往下掉，掉到三成以下就异化：伤害变高，护盾变薄，场上的敌人也会变多。</p>
+          <p>所有菜单都按病历做。角色页是一张病人档案，武器页写着每件武器的攻击范围和出手节奏，症状记录同时也是解锁条件。</p>
+        </div>
+        <p class="links">
+          <a href="https://miolulu.github.io/hospital-slayer-game/play/" target="_blank" rel="noopener">在线试玩<span class="arrow">↗</span></a>
+          <a href="zhanshen/">详情</a>
+        </p>
+      </div>
     </div>
   </article>
 
   <!-- 02 -->
   <article class="work" id="tree">
-    <div class="work__head">
-      <span class="work__no">02</span>
-      <h2>树语 <small>TreeWhisper</small></h2>
-      <ul class="tags">
-        <li>情绪树洞</li><li>匿名社区</li><li>移动端 Web</li><li>可注册体验</li>
-      </ul>
-    </div>
+    <div class="wrap">
+      <div class="work__head">
+        <span class="work__no">02</span>
+        <h2>树语</h2>
+        <ul class="tags">
+          <li>情绪树洞</li><li>匿名纸条</li><li>纸团漂流</li><li>可注册</li>
+        </ul>
+        <p class="work__sub">写下的纸条贴进树洞，或者揉成纸团扔进海里等人捞。</p>
+      </div>
 
-    <div class="work__split">
-      <img src="assets/hd/tree-home.webp" alt="树语树洞首页：一棵发光的树，树上五个树洞对应五种情绪，树根旁边住着一只小蜗" width="1181" height="2300">
-      <div class="work__body" style="margin-top:0">
-        <p>一个写纸条的地方。写下的话可以贴进树洞，也可以揉成纸团扔进海里，等一个陌生人捞起来。</p>
-        <p>树上五个洞对应五种情绪：心情、烦恼、待办、梦想、秘密。写之前先选洞，不填心情打分表；选「秘密」的纸条只能存，不能扔。</p>
-        <p>纸条可以允许陌生人回一句。回的人看不到作者，作者也看不到回的人，只剩一个日期。纸团每天限捞五次，捞过的不再出现。</p>
+      <div class="phones phones--c3">
+        <figure class="ph"><img src="assets/hd/tree-home.webp" alt="树语首页：一棵发光的树，树上五个树洞对应五种情绪，树根旁边住着一只小蜗" width="1181" height="2300"></figure>
+        <figure class="ph"><img src="assets/hd/tree-write.webp" alt="写纸条：心情、烦恼、待办、梦想、秘密五个洞，写完可以存进树洞或者抛出纸团" width="1181" height="2300" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/tree-calendar.webp" alt="树历：一个月一张纸，写过纸条的日子盖一片叶子" width="1181" height="2300" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/tree-notes.webp" alt="我的树洞：按时间列出写过的小纸条，每条带情绪颜色和回复数" width="1181" height="2300" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/tree-note.webp" alt="纸条详情：正文写在横线纸上，下面是陌生人的两条回复" width="1181" height="2300" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/tree-spirit.webp" alt="小蜗的档案：等级、成长进度、每天的欢迎语，以及喂食、抚摸、写纸条三个动作" width="1181" height="2300" loading="lazy"></figure>
+      </div>
+
+      <div class="desc">
+        <div>
+          <p>一个写纸条的地方。写下的话可以贴进树洞，也可以揉成纸团扔进海里，等某个陌生人捞起来。</p>
+          <p>树上五个洞对应五种情绪：心情、烦恼、待办、梦想、秘密。写之前先选洞，不填心情打分表；选「秘密」的纸条只能存，不能扔。</p>
+          <p>纸条可以允许陌生人回一句。回的人看不到作者，作者也看不到回的人，只剩一个日期。纸团每天限捞五次，捞过的不再出现。</p>
+          <p>树历按天记着写过纸条的日子，点开能翻回当天的全部纸条。小蜗住在树根旁边，喂它、摸它、写纸条它会长大，等级越高，那句「欢迎回家」换得越勤。</p>
+        </div>
         <p class="links">
           <a href="https://treewhisper-demo.app.workbuddy.host/?sharecode=D5ALB7TBDL" target="_blank" rel="noopener">在线体验<span class="arrow">↗</span></a>
           <a href="tree/">详情</a>
         </p>
       </div>
     </div>
-
-    <div class="shots shots--pair" style="margin-top:clamp(26px,3.4vw,44px)">
-      <img src="assets/hd/tree-notes.webp" alt="我的树洞：按时间倒序列出写过的小纸条，每条带情绪色条与回复数" width="1832" height="2534" loading="lazy">
-      <img src="assets/hd/tree-calendar.webp" alt="树历：一个月一张纸，写过纸条的日子盖一片叶子" width="1148" height="1718" loading="lazy">
-    </div>
-    <div class="shots shots--pair">
-      <img src="assets/hd/tree-write.webp" alt="写纸条：五种情绪可选，写完可以存进树洞或者抛出纸团" width="1202" height="1304" loading="lazy">
-      <img src="assets/hd/tree-spirit.webp" alt="小蜗的档案：等级、成长进度、每天的欢迎语，以及喂食、抚摸、写纸条三个动作" width="1496" height="1781" loading="lazy">
-    </div>
-    <div class="shots">
-      <img src="assets/hd/tree-note.webp" alt="纸条详情：正文写在横线纸上，下面是陌生人的两条回复" width="1976" height="1769" loading="lazy">
-    </div>
-
-    <div class="work__body">
-      <p>树历按天记下写过纸条的日子，有纸条的那天盖一片叶子，点开能翻回当天的全部纸条。小蜗住在树根旁边，喂它、摸它、写纸条它会长大；等级越高，「欢迎回家」那句换得越勤，句子是从最近写过的纸条里挑的。</p>
-      <p>整站是一个 Node 服务：纸条、纸团、回复、登录状态都存在数据库里，两个人同时写，另一边的树上会立刻多一张纸条。</p>
-    </div>
   </article>
 
   <!-- 03 -->
   <article class="work" id="meow">
-    <div class="work__head">
-      <span class="work__no">03</span>
-      <h2>喵喵音阶森林 <small>Meow Chime</small></h2>
-      <ul class="tags">
-        <li>音乐玩具</li><li>Web Audio</li><li>Canvas</li><li>无音频文件</li>
-      </ul>
-    </div>
+    <div class="wrap">
+      <div class="work__head">
+        <span class="work__no">03</span>
+        <h2>喵喵音阶森林</h2>
+        <ul class="tags">
+          <li>音乐玩具</li><li>七只猫</li><li>三种音色</li><li>可试玩</li>
+        </ul>
+        <p class="work__sub">点猫发声，键盘三排就是三个八度。</p>
+      </div>
 
-    <div class="shots">
-      <img src="assets/hd/meow-forest.webp" alt="喵喵音阶森林主界面：七只猫站在睡莲叶上，底部是低中高三个八度的发光键位" width="2602" height="1750">
-    </div>
-    <div class="shots shots--pair">
-      <img src="assets/hd/meow-create.webp" alt="演奏与保存：底部音符键区、回退清空存三个按钮，右侧面板收着存过的旋律" width="2602" height="1750" loading="lazy">
-      <img src="assets/hd/meow-welcome.webp" alt="开场说明卡：轻触猫咪发声、键盘分区、随机一段、底部按钮管理演奏流程" width="2602" height="1750" loading="lazy">
-    </div>
+      <div class="phones phones--land phones--c2">
+        <figure class="ph"><img src="assets/hd/meow-forest.webp" alt="森林主界面：七只猫站在睡莲叶上，下面是一排会发光的键位" width="2312" height="1562"></figure>
+        <figure class="ph"><img src="assets/hd/meow-welcome.webp" alt="开场说明卡：轻触猫咪发声、键盘分区、随机一段、底部按钮管理演奏流程" width="2312" height="1562" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/meow-create.webp" alt="演奏界面：底部音符键、回退清空存三个按钮，右侧面板收着存过的旋律" width="2312" height="1562" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/meow-play.webp" alt="弹奏中：猫跟着音阶亮起来，音符从猫身上飘出去" width="2312" height="1562" loading="lazy"></figure>
+      </div>
 
-    <div class="work__body">
-      <p>七只猫站成一排，每只守一个音阶。点猫或者敲键盘都能发声，电子琴、钢琴、木琴三种音色随时换。</p>
-      <p>键盘三排对应三个八度：QWE 一行是高音，ASD 是中音，ZXC 是低音。手指放上去位置就固定，不看屏幕也能弹。</p>
-      <p>弹过的旋律能回退一步、一次清空，也能存下来，右侧面板列着存过的片段。所有声音用 Web Audio 实时合成，整个项目没有一个音频文件。</p>
-      <p class="links">
-        <a href="https://miolulu.github.io/meow-chime/" target="_blank" rel="noopener">在线玩<span class="arrow">↗</span></a>
-        <a href="meow/">详情</a>
-      </p>
+      <div class="desc">
+        <div>
+          <p>七只猫站成一排，每只守一个音阶。点猫或者敲键盘都能发声，电子琴、钢琴、木琴三种音色随时换。</p>
+          <p>键盘三排对应三个八度：QWE 一行是高音，ASD 是中音，ZXC 是低音。手指放上去位置就固定，不看屏幕也能弹。</p>
+          <p>弹过的旋律能回退一步、一次清空，也能存下来，右侧面板列着存过的片段。</p>
+        </div>
+        <p class="links">
+          <a href="https://miolulu.github.io/meow-chime/" target="_blank" rel="noopener">在线试玩<span class="arrow">↗</span></a>
+          <a href="meow/">详情</a>
+        </p>
+      </div>
     </div>
   </article>
 
   <!-- 04 -->
   <article class="work" id="ember">
-    <div class="work__head">
-      <span class="work__no">04</span>
-      <h2>余烬 Embers <small>原创科幻长篇</small></h2>
-      <ul class="tags">
-        <li>群像长篇</li><li>十章正文</li><li>在线阅读器</li><li>响应式</li>
-      </ul>
-    </div>
+    <div class="wrap">
+      <div class="work__head">
+        <span class="work__no">04</span>
+        <h2>余烬</h2>
+        <ul class="tags">
+          <li>原创科幻</li><li>六人小队</li><li>十章正文</li><li>在线阅读</li>
+        </ul>
+        <p class="work__sub">一部科幻长篇，和它自己的阅读器。</p>
+      </div>
 
-    <div class="shots">
-      <img src="assets/hd/ember-cover.webp" alt="《余烬》封面：红色书名、主题词、题记与六个角色头像" width="2602" height="1750">
-    </div>
-    <div class="shots shots--pair">
-      <img src="assets/hd/ember-read.webp" alt="阅读界面：左侧固定目录，右侧正文，顶部一条细进度线" width="2602" height="1750" loading="lazy">
-      <img src="assets/hd/ember-roles.webp" alt="角色页：灼野小队六名成员，各自的队内位置与异能等级" width="2602" height="1750" loading="lazy">
-    </div>
+      <div class="phones phones--c3">
+        <figure class="ph"><img src="assets/hd/ember-cover.webp" alt="余烬封面：红色书名、主题词、题记与六个角色头像" width="1181" height="2300"></figure>
+        <figure class="ph"><img src="assets/hd/ember-read.webp" alt="正文：序章开头，顶部一条细进度线" width="1181" height="2300" loading="lazy"></figure>
+        <figure class="ph"><img src="assets/hd/ember-roles.webp" alt="角色页：灼野小队六名成员，各自的队内位置与异能等级" width="1181" height="2300" loading="lazy"></figure>
+      </div>
 
-    <div class="shots shots--two-phone" style="margin-top:clamp(26px,3.4vw,40px)">
-      <img src="assets/hd/ember-mobile-cover.webp" alt="手机上的封面：书名、题记与六个角色头像竖排" width="1181" height="2300" loading="lazy">
-      <img src="assets/hd/ember-mobile-read.webp" alt="手机上的正文：左侧栏收成抽屉，正文栏宽跟着屏幕走" width="1181" height="2300" loading="lazy">
-    </div>
-    <p class="shots__cap">同一套页面在手机上的样子：侧栏收成抽屉，正文重排，行高与段距不变。</p>
-
-    <div class="work__body">
-      <p>一部十章左右的科幻长篇，六个主角，一支叫灼野的小队。故事发生在所有星辰熄灭之后，序章从一座被异变体占了三天的能源站开始。</p>
-      <p>阅读器把封面、目录、角色放进同一条侧栏，切章节不丢阅读位置；顶部一条 3px 进度线，读到哪儿一目了然。正文栏宽 760px，行高 1.9，段间距大于行距。</p>
-      <p>六个角色各有一张卡片：头像、队内位置、异能名称与等级——能量操控 S、感知网络 B+、生物修复 B。点开是立绘和一段人物说明，忘了谁是谁的时候一眼能找回来。</p>
-      <p class="links">
-        <a href="https://miolulu.github.io/ember-novel/" target="_blank" rel="noopener">在线阅读<span class="arrow">↗</span></a>
-        <a href="ember/">详情</a>
-      </p>
+      <div class="desc">
+        <div>
+          <p>一部十章左右的科幻长篇，六个主角，一支叫灼野的小队。故事从所有星辰熄灭之后开始，序章在一座被异变体占了三天的能源站。</p>
+          <p>阅读器把封面、目录、角色收进同一条侧栏，切章节不丢阅读位置；顶部一条细进度线，读到哪儿一目了然。</p>
+          <p>六个角色各有一张卡片：头像、队内位置、异能名称与等级。点开是立绘和一段人物说明，忘了谁是谁的时候一眼能找回来。</p>
+          <p>同一套页面在手机上也成立，侧栏收成抽屉，正文重新排版，读到哪一段都不会跳。</p>
+        </div>
+        <p class="links">
+          <a href="https://miolulu.github.io/ember-novel/" target="_blank" rel="noopener">在线阅读<span class="arrow">↗</span></a>
+          <a href="ember/">详情</a>
+        </p>
+      </div>
     </div>
   </article>
 
