@@ -41,30 +41,50 @@
     </div>
   </section>
 
-  <section class="phones">
-    <figure class="narrow">
+  <section class="gal gal--two">
+    <figure class="shot">
       <img src="../assets/hd/tree-home.webp" alt="树语首页：一棵发光的树，树上有五个彩色树洞" width="1181" height="2300">
-      <figcaption>树洞首页</figcaption>
+      <figcaption><b>树洞首页</b><span>中间是树，五个树洞挂在不同高度</span></figcaption>
     </figure>
-    <figure class="wide">
-      <img src="../assets/tree/01-cover.webp" alt="三个核心界面：树洞首页、捡纸团提示、小蜗档案" width="1600" height="1000">
-      <figcaption>三个核心界面：树洞首页、捡纸团、小蜗</figcaption>
+    <figure class="shot">
+      <img src="../assets/hd/tree-notes.webp" alt="我的树洞：按时间倒序列出写过的纸条" width="1832" height="2534" loading="lazy">
+      <figcaption><b>我的树洞</b><span>按时间倒序，每条带情绪色条与回复数</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../assets/hd/tree-calendar.webp" alt="树历：有纸条的日子盖一片叶子" width="1148" height="1718" loading="lazy">
+      <figcaption><b>树历</b><span>一个月一张纸，写过纸条的日子盖叶子</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../assets/hd/tree-spirit.webp" alt="小蜗的档案：等级、成长进度、欢迎语" width="1496" height="1781" loading="lazy">
+      <figcaption><b>小蜗</b><span>喂食、抚摸、写纸条都会让它长大</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="gal">
+    <figure class="shot">
+      <img src="../assets/hd/tree-write.webp" alt="写纸条：五种情绪可选，写完可以存进树洞或者抛出纸团" width="1202" height="1304" loading="lazy">
+      <figcaption><b>写纸条</b><span>五种情绪先选一个；选「秘密」只能存，不能扔</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../assets/hd/tree-note.webp" alt="纸条详情：正文与陌生人的回复" width="1976" height="1769" loading="lazy">
+      <figcaption><b>纸条详情</b><span>正文写在横线纸上，下面是可以回的两句话</span></figcaption>
     </figure>
   </section>
 
   <section class="sec body">
     <h2>两种写法</h2>
-    <p>写之前先选：贴到树上，所有人能看见；或者揉成团塞进瓶子，扔进海里漂着。没有「写完之后再改可见性」的开关，选的时候就得想清楚。</p>
-    <p>捡纸团是另一条路。点树摇一摇，会掉一个纸团下来，读完可以回一句，也可以什么都不说就放回去。</p>
+    <p>写之前先选：贴到树上，所有树友都能看见；或者揉成团塞进瓶子，扔进海里漂着。没有「写完之后再改可见性」的开关，选的时候就得想清楚。</p>
+    <p>捡纸团是另一条路。点树摇一摇，会掉一个纸团下来，读完可以回一句，也可以什么都不说就放回去。每天限捞五次，捞过的不会再出现，所以不会总碰到同一个人。</p>
 
     <h2 style="margin-top:34px">树本身</h2>
-    <p>树上五个发光的树洞，分别对应五种情绪。选洞就是选心情，不用填打分表。树历记着你在树下待过多少天，树影集收着你写过和捡到的东西。</p>
+    <p>树上五个发光的树洞，分别对应心情、烦恼、待办、梦想、秘密。选洞就是选心情，不用填打分表。</p>
+    <p>树历是一个月一张纸，写过纸条的日子盖一片叶子，点开能翻回当天的全部纸条。树影集收着你写过的东西，也收着捡到过的纸团。</p>
 
     <h2 style="margin-top:34px">小蜗</h2>
-    <p>树根旁住着一只叫小蜗的蜗牛，喂食、抚摸、写纸条都会让它长大，等级只看你回来过几次。「欢迎回家」每天换一句话。</p>
+    <p>树根旁住着一只叫小蜗的蜗牛，喂食、抚摸、写纸条都会让它长大，等级只看你回来过几次。等级越高，「欢迎回家」那句换得越勤，句子是从你最近写过的纸条里挑的。</p>
 
     <h2 style="margin-top:34px">通知</h2>
-    <p>只在纸条被捡起、被回应的时候出现。树长得怎么样、小蜗有没有长大，都要自己回来看。</p>
+    <p>只在纸条被捡起、被回应的时候出现，走的是 Socket.io 的长连接。树长得怎么样、小蜗有没有长大，都要自己回来看。</p>
   </section>
 
   <nav class="pager">

@@ -103,8 +103,9 @@ def phone(src, out_name, screen_w=1170, bezel=46, radius_ratio=0.135, max_h=2300
     print(out_name, canvas.size, round(os.path.getsize(dst) / 1024), "KB")
 
 
-screen_card(os.path.join(HD, "zs-6-archive.png"), out_name="zhanshen-archive.webp")
-screen_card(os.path.join(HD, "zs-4-fight2.png"), out_name="zhanshen-fight.webp")
-screen_card(os.path.join(ORIG, "03-playing.png"), radius=20, out_name="meow-play.webp")
-screen_card(os.path.join(ORIG, "03-reading.png"), radius=20, out_name="ember-read.webp")
-phone(os.path.join(HD, "tree-home.png"), "tree-home.webp")
+if __name__ == "__main__":
+    screen_card(os.path.join(HD, "zs-6-archive.png"), out_name="zhanshen-archive.webp")
+    screen_card(os.path.join(HD, "zs-4-fight2.png"), out_name="zhanshen-fight.webp")
+    screen_card(os.path.join(ORIG, "03-playing.png"), radius=20, out_name="meow-play.webp")
+    screen_card(os.path.join(ORIG, "03-reading.png"), radius=20, out_name="ember-read.webp")
+    phone(os.path.join(HD, "tree-home.png"), "tree-home.webp")
