@@ -4,14 +4,14 @@
    =========================================================== */
 
 :root {
-  --paper: #f7f4ed;
-  --paper-2: #efeae0;
-  --ink: #191816;
-  --ink-soft: #3d3a34;
-  --muted: #736d61;
-  --line: #ddd5c6;
-  --line-strong: #c3b9a6;
-  --accent: #c8452c;
+  --paper: #f7f1e5;
+  --paper-2: #efe7d6;
+  --ink: #1f1a16;
+  --ink-soft: #463b32;
+  --muted: #6f6153;
+  --line: rgba(52, 40, 28, .16);
+  --line-strong: rgba(52, 40, 28, .3);
+  --accent: #a8402a;
   --accent-soft: rgba(200, 69, 44, 0.08);
   --serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", "SimSun", serif;
   --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",

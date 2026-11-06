@@ -3,161 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>卢璐 · 作品集 — 把判断做成能点开的东西</title>
-<meta name="description" content="卢璐的产品作品集：一款克苏鲁像素 Roguelike、一个互动音乐应用、一个情绪树洞社区、一部科幻长篇阅读器。全部可在线体验。">
-<link rel="stylesheet" href="assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191816'/%3E%3Ctext x='16' y='23' font-size='18' fill='%23f7f4ed' text-anchor='middle' font-family='serif'%3E%E7%82%89%3C/text%3E%3C/svg%3E">
+<title>卢璐 · 四件自己做的东西</title>
+<meta name="description" content="卢璐，产品经理。四件用 AI 从一句话做到上线的作品：像素 Roguelike、互动音乐应用、情绪树洞社区、科幻长篇阅读器。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ded0b8'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23a8402a'/%3E%3C/svg%3E">
+<style>
+/* ───────────────────────────────────────────────
+   定调：纸质工作台（Organic / 手工质感）
+   纸 #f7f1e5 · 板 #ded0b8 · 墨 #1f1a16 · 唯一强调色 朱红 #a8402a
+   展示字：宋体（大字号 + 负字距，替代通用无衬线）
+   注释字：楷体（手写感，用于“我做的部分”这类旁注）
+   正文字：思源黑 / 苹方 / 雅黑
+   记忆点：四张实物卡片钉在洞洞板上，右上角一张黄色便签写着没做完的事
+   ─────────────────────────────────────────────── */
+:root{
+  --paper:#f7f1e5;
+  --paper-hi:#fdf9f0;
+  --board:#ded0b8;
+  --board-2:#d2c1a4;
+  --ink:#1f1a16;
+  --ink-2:#463b32;
+  --muted:#6f6153;
+  --line:rgba(52,40,28,.16);
+  --line-strong:rgba(52,40,28,.3);
+  --accent:#a8402a;
+  --tape:rgba(203,182,143,.72);
+  --yellow:#f3e5a0;
+  --yellow-ink:#453714;
+
+  --display:"Songti SC","STSong","SimSun",serif;
+  --hand:"Kaiti SC","STKaiti","KaiTi","楷体",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+
+  --step-0:15px; --step-1:17px; --step-2:20px; --step-3:26px;
+  --step-4:34px; --step-5:clamp(40px,5.4vw,64px);
+
+  --space-1:4px; --space-2:8px; --space-3:14px; --space-4:22px;
+  --space-5:38px; --space-6:64px; --space-7:96px;
+
+  --shadow-1:0 2px 6px rgba(60,44,28,.12);
+  --shadow-2:0 12px 26px -18px rgba(60,44,28,.6);
+  --shadow-3:0 28px 48px -28px rgba(60,44,28,.75);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--sans);font-size:var(--step-0);
+  background-color:var(--board);
+  /* 洞洞板：规则圆孔 + 一层暖色渐晕，避免纯色平铺 */
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(96,76,52,.22) 1.6px, transparent 1.7px),
+    radial-gradient(80rem 50rem at 20% -10%, rgba(255,250,238,.55), transparent 60%),
+    radial-gradient(60rem 40rem at 100% 100%, rgba(120,92,60,.16), transparent 55%);
+  background-size:26px 26px, 100% 100%, 100% 100%;
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+/* 纸颗粒：让整页有一点纤维感，透明度压到很低 */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+a{color:inherit}
+img{max-width:100%}
+::selection{background:rgba(168,64,42,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:20;background:var(--paper);padding:10px 14px;border:1px solid var(--line-strong)}
+
+/* 顶部：只留名字和两个出口，像贴在桌沿的标签 */
+.bar{display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);
+  padding:var(--space-4) clamp(18px,4.5vw,54px) 0;max-width:1240px;margin:0 auto}
+.bar__id{display:flex;align-items:baseline;gap:10px}
+.bar__name{font-family:var(--display);font-size:19px;letter-spacing:.14em}
+.bar__role{font-size:11px;letter-spacing:.22em;color:var(--muted)}
+.bar__links{display:flex;gap:var(--space-4);font-size:12.5px;color:var(--ink-2)}
+.bar__links a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;
+  transition:color .18s ease,border-color .18s ease}
+.bar__links a:hover{color:var(--accent);border-color:var(--accent)}
+
+.board{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.5vw,54px) var(--space-6)}
+
+/* ── 首屏：左侧大标题，右侧一张便签，名片压在两者之间 ── */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  gap:clamp(24px,4vw,56px);align-items:start;
+  padding:clamp(28px,5vw,64px) 0 clamp(34px,5vw,64px)}
+.kicker{font-size:10.5px;letter-spacing:.3em;color:var(--muted);margin:0 0 var(--space-3);
+  display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:34px;height:1px;background:var(--line-strong)}
+h1{font-family:var(--display);font-weight:600;font-size:var(--step-5);line-height:1.16;
+  letter-spacing:-.02em;margin:0}
+h1 em{font-style:normal;position:relative;white-space:nowrap}
+/* 强调只用在标题的一个词上，手绘下划线 */
+h1 em::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.1em;height:.32em;
+  background:rgba(168,64,42,.16);z-index:-1;transform:rotate(-.6deg)}
+.lede{margin:var(--space-4) 0 0;font-size:15px;line-height:1.95;color:var(--ink-2);max-width:36em}
+.lede b{color:var(--ink);font-weight:600}
+.lede .hand{font-family:var(--hand);font-size:16px;color:var(--ink-2)}
+
+/* 便签：首屏的记忆点 */
+.memo{position:relative;background:var(--yellow);padding:20px 22px 18px;
+  border:1px solid #e0cf85;box-shadow:var(--shadow-3);
+  transform:rotate(1.4deg);margin-top:var(--space-2)}
+.memo::before{content:"";position:absolute;top:-10px;left:50%;margin-left:-34px;width:68px;height:19px;
+  background:rgba(255,255,255,.5);transform:rotate(-2deg);
+  border-left:1px dashed rgba(170,148,96,.55);border-right:1px dashed rgba(170,148,96,.55)}
+.memo h2{font-family:var(--hand);font-size:17px;font-weight:400;margin:0 0 10px;color:var(--yellow-ink)}
+.memo ul{margin:0;padding:0;list-style:none;font-family:var(--hand);font-size:15px;line-height:1.95;color:var(--yellow-ink)}
+.memo li{display:flex;gap:8px}
+.memo li::before{content:"□";font-family:var(--sans);font-size:12px;line-height:1.75;opacity:.5}
+.memo p{font-size:11px;color:#7a6728;margin:12px 0 0;line-height:1.7}
+
+/* ── 作品：4 张钉在板上的实物卡 ── */
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,2.6vw,34px);align-items:start}
+
+.work{
+  --rot:0deg;
+  position:relative;display:block;text-decoration:none;background:var(--paper-hi);
+  border:1px solid var(--line);padding:14px 14px 18px;
+  box-shadow:var(--shadow-3);
+  transform:rotate(var(--rot));
+  transition:transform .34s var(--ease), box-shadow .34s var(--ease);
+}
+.work:hover,.work:focus-visible{transform:rotate(0deg) translateY(-6px);box-shadow:0 34px 54px -28px rgba(60,44,28,.8)}
+.work:hover .go{letter-spacing:.12em}
+.work::before{ /* 图钉 */
+  content:"";position:absolute;top:-7px;left:50%;margin-left:-6px;width:12px;height:12px;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #ffe0d4, #b24a34 55%, #7a2919);
+  box-shadow:0 2px 3px rgba(50,32,20,.45);z-index:3;
+}
+.work--lg{grid-column:span 7;--rot:-.9deg}
+.work--tall{grid-column:span 5;--rot:.8deg}
+.work--half{grid-column:span 6;--rot:.5deg}
+.work--half:nth-of-type(4){--rot:-.6deg}
+
+.shot{display:block;position:relative;background:#efe7d8;overflow:hidden;border:1px solid rgba(60,44,28,.12)}
+.shot img{display:block;width:100%;height:auto}
+
+/* 斩神两图叠放：氛围图打底，实机图斜压一角，像两张照片叠在一起 */
+.stack{position:relative;padding-bottom:26%}
+.stack__main{display:block;width:100%;height:auto;border:1px solid rgba(60,44,28,.18)}
+.stack__inset{position:absolute;left:3%;bottom:0;width:54%;height:auto;
+  border:5px solid #fff;box-shadow:var(--shadow-2);transform:rotate(-1.6deg)}
+.shot--phone{display:flex;justify-content:center;padding:10px 0 4px;background:transparent;border:0}
+.shot--phone img{width:auto;height:clamp(400px,38vw,470px)}
+
+.work h3{font-family:var(--display);font-size:var(--step-3);font-weight:600;margin:16px 0 0;letter-spacing:.01em}
+.work h3 span{font-family:var(--sans);font-size:10px;letter-spacing:.2em;color:var(--muted);margin-left:10px;vertical-align:3px}
+.work .say{margin:9px 0 0;font-size:13.5px;line-height:1.85;color:var(--ink-2)}
+.work .mine{font-family:var(--hand);font-size:15.5px;line-height:1.7;color:#5c4b3c;margin:10px 0 0;
+  padding-left:11px;border-left:2px solid rgba(168,64,42,.38)}
+.work .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px;padding:0;list-style:none}
+.work .meta li{font-size:10.5px;letter-spacing:.06em;color:var(--muted);
+  border:1px solid var(--line);padding:2px 7px;background:var(--paper)}
+.work .go{display:inline-block;margin-top:15px;font-size:12.5px;color:var(--accent);
+  border-bottom:1px solid rgba(168,64,42,.34);padding-bottom:1px;transition:letter-spacing .3s var(--ease)}
+.caption{font-size:10.5px;color:var(--muted);margin:7px 0 0;line-height:1.6}
+
+/* ── 页脚区：制作方式 + 联系 ── */
+.colophon{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);
+  gap:clamp(20px,3vw,34px);margin-top:clamp(44px,6vw,86px);align-items:start}
+.panel{background:var(--paper);border:1px solid var(--line);padding:22px 24px;box-shadow:var(--shadow-2)}
+.panel h2{font-family:var(--display);font-size:var(--step-2);font-weight:600;margin:0 0 14px;letter-spacing:.04em}
+.panel dl{margin:0;font-size:12.5px;line-height:1.95;color:var(--ink-2)}
+.panel dt{float:left;width:52px;color:var(--muted)}
+.panel dd{margin:0 0 6px 52px}
+.panel .tiny{font-size:10.5px;color:var(--muted);margin:14px 0 0;line-height:1.7;
+  border-top:1px dashed var(--line-strong);padding-top:10px}
+
+.card{position:relative;background:var(--paper-hi);border:1px solid var(--line);
+  padding:20px 22px;box-shadow:var(--shadow-3);transform:rotate(-.8deg)}
+.card::before{content:"";position:absolute;top:-9px;right:24px;width:54px;height:19px;
+  background:var(--tape);transform:rotate(4deg)}
+.card h2{font-family:var(--display);font-size:23px;font-weight:600;margin:0;letter-spacing:.1em}
+.card .role{font-size:10.5px;letter-spacing:.22em;color:var(--muted);margin:6px 0 0}
+.card ul{list-style:none;margin:14px 0 0;padding:0;font-size:12.5px;line-height:2;color:var(--ink-2)}
+.card li a{text-decoration:none;border-bottom:1px solid rgba(70,59,50,.28)}
+.card li a:hover{color:var(--accent);border-color:var(--accent)}
+.card .sign{font-family:var(--hand);font-size:15px;color:#5c4b3c;margin:14px 0 0;
+  border-top:1px dashed var(--line-strong);padding-top:10px}
+
+footer{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4.5vw,54px) 44px;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 16px;font-size:11px;color:var(--muted)}
+footer .dash{flex:1;height:1px;background:var(--line);min-width:40px}
+
+/* ── 入场：四组错峰，卡片像被按到板上 ── */
+@keyframes settle{
+  from{opacity:0;transform:translateY(-22px) rotate(var(--rot)) scale(.985)}
+  to{opacity:1;transform:translateY(0) rotate(var(--rot)) scale(1)}
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero .kicker,.hero h1,.hero .lede{animation:rise .62s var(--ease) both}
+.hero h1{animation-delay:.06s}
+.hero .lede{animation-delay:.14s}
+.memo{animation:rise .7s var(--ease) .22s both}
+.work{animation:settle .72s var(--ease) both}
+.work:nth-of-type(1){animation-delay:.2s}
+.work:nth-of-type(2){animation-delay:.3s}
+.work:nth-of-type(3){animation-delay:.4s}
+.work:nth-of-type(4){animation-delay:.5s}
+.colophon{animation:rise .7s var(--ease) .58s both}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero .kicker,.hero h1,.hero .lede,.memo,.work,.colophon{animation:none}
+  .work,.work:hover{transition:none;transform:rotate(var(--rot))}
+}
+
+/* ── 响应式：768 以下全部改成单列，旋转归零 ── */
+@media (max-width:1024px){
+  .hero{grid-template-columns:1fr}
+  .memo{margin-top:var(--space-3);max-width:440px}
+  .work--lg,.work--tall{grid-column:span 12}
+  .work--half{grid-column:span 6}
+  .colophon{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  .work--half{grid-column:span 12}
+  .work,.card,.memo{--rot:0deg;transform:none}
+  .work{animation-name:rise}
+  .shot--phone img{height:auto;width:72%;max-width:320px}
+  .stack{padding-bottom:30%}
+  .stack__inset{width:58%}
+  .bar__links{gap:var(--space-3)}
+}
+</style>
 </head>
 <body>
+<a class="skip" href="#works">跳到作品</a>
 
-<header class="topbar">
-  <div class="wrap topbar__in">
-    <a class="brand" href="./">卢璐 <small>Portfolio</small></a>
-    <nav class="topnav">
-      <a href="#works">作品</a>
-      <a href="#about">关于</a>
-      <a href="#contact">联系</a>
-      <a href="https://github.com/Miolulu" target="_blank" rel="noopener">GitHub ↗</a>
-    </nav>
+<header class="bar">
+  <div class="bar__id">
+    <span class="bar__name">卢璐</span>
+    <span class="bar__role">产品经理</span>
   </div>
+  <nav class="bar__links" aria-label="联系方式">
+    <a href="mailto:2648488512@qq.com">邮箱</a>
+    <a href="https://github.com/Miolulu" target="_blank" rel="noopener">GitHub</a>
+  </nav>
 </header>
 
-<main>
+<main class="board">
 
-  <section class="wrap hero">
-    <div class="eyebrow">作品集 · 2024 — 2026</div>
-    <h1>把判断做成<br>能<em>点开</em>的东西</h1>
-    <p class="hero__lede">
-      我是卢璐，产品经理。这四件作品都是我一个人从定义做到上线：需求是我拆的，界面是我定的，
-      代码是我和 AI 一起写的。它们不是设计稿，现在就能打开用。
-    </p>
-
-    <dl class="hero__meta">
-      <div><dt>Works</dt><dd>四件作品</dd></div>
-      <div><dt>Live</dt><dd>三件可在线体验</dd></div>
-      <div><dt>Role</dt><dd>产品定义 · 交互 · 上线</dd></div>
-      <div><dt>Year</dt><dd>2024 — 2026</dd></div>
-    </dl>
-  </section>
-
-  <section class="wrap works" id="works">
-
-    <article class="work">
-      <div class="work__no">01</div>
-      <div class="work__body">
-        <h3>我在精神病院斩神 <span>Game</span></h3>
-        <p>克苏鲁式像素 Roguelike，横屏自动战斗。你是「患者 0001」，要一路砍穿 30 层病区——
-           打得越久，SAN 值掉得越快，掉到 30 就会强制异化：更强，也更脆。</p>
-        <div class="work__tags">
-          <span class="tag">Phaser 3</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">30 层关卡</span>
-          <span class="tag">GameJam</span>
-        </div>
-        <a class="work__more" href="zhanshen/">看这个项目</a>
-      </div>
-      <div class="work__shot">
-        <img src="assets/zhanshen/01-title.webp" alt="我在精神病院斩神 · 标题画面" loading="lazy">
-      </div>
-    </article>
-
-    <article class="work">
-      <div class="work__no">02</div>
-      <div class="work__body">
-        <h3>喵喵音阶森林 <span>Web App</span></h3>
-        <p>把七个音阶做成七只猫。敲键盘或点猫就能发声，电子音、钢琴、木琴随时切换，
-           随手弹的旋律可以回退、清空、保存。目标用户是「想碰音乐但怕学乐理」的人。</p>
-        <div class="work__tags">
-          <span class="tag">互动音乐</span>
-          <span class="tag">实时合成</span>
-          <span class="tag">Canvas</span>
-          <span class="tag">零乐理门槛</span>
-        </div>
-        <a class="work__more" href="meow/">看这个项目</a>
-      </div>
-      <div class="work__shot">
-        <img src="assets/meow/02-forest.webp" alt="喵喵音阶森林 · 演奏界面" loading="lazy">
-      </div>
-    </article>
-
-    <article class="work">
-      <div class="work__no">03</div>
-      <div class="work__body">
-        <h3>树语 TreeWhisper <span>Community</span></h3>
-        <p>情绪树洞社区。写下的纸条可以贴在树上，也可以揉成纸团扔进瓶子等陌生人捡；
-           一只叫小蜗的养成角色，用它记得你回来过。</p>
-        <div class="work__tags">
-          <span class="tag">用户体系</span>
-          <span class="tag">Socket.io</span>
-          <span class="tag">成长机制</span>
-          <span class="tag">AI 辅助开发</span>
-        </div>
-        <a class="work__more" href="tree/">看这个项目</a>
-      </div>
-      <div class="work__shot">
-        <img src="assets/tree/01-cover.webp" alt="树语 · 三个界面" loading="lazy">
-      </div>
-    </article>
-
-    <article class="work">
-      <div class="work__no">04</div>
-      <div class="work__body">
-        <h3>余烬 Embers <span>Reading</span></h3>
-        <p>一部原创科幻群像长篇，和一个愿意陪人读完它的阅读器。十章正文、六个角色，
-           每人一张带异能等级的档案卡；封面、目录、角色三套视图共用一条进度线。</p>
-        <div class="work__tags">
-          <span class="tag">长文排版</span>
-          <span class="tag">原创内容</span>
-          <span class="tag">原生前端</span>
-        </div>
-        <a class="work__more" href="ember/">看这个项目</a>
-      </div>
-      <div class="work__shot">
-        <img src="assets/ember/01-cover.webp" alt="余烬 · 封面" loading="lazy">
-      </div>
-    </article>
-
-  </section>
-
-  <section class="wrap section" id="about">
-    <div class="section__head">
-      <h2>关于我</h2>
-      <p>三年多产品经验，做过百万 DAU 社区、AI 模板从 0 到 1、剧本杀三端重构。</p>
-    </div>
-
-    <div class="about">
-      <div>
-        <p>我的习惯是：先把问题写成一句话，再决定要不要做。做的时候先想清楚这一屏放什么、
-           为什么放、什么时候拿掉——剩下的交给实现。</p>
-        <p>这些作品是我在业余时间用 AI 写代码做出来的。我不写框架，但我决定每一屏的分工、
-           每一个数值的取舍，也自己验收每一次改动。产品经理的基本功，是不把「想做」当成「做完」。</p>
-        <p>白天在游戏与社区行业做需求、做后台、做 AI 内容供给；晚上做这些能点开的小东西。
-           两边用的是同一套方法。</p>
-      </div>
-
-      <div class="caps">
-        <div class="cap"><b>产品定义</b><span>用户洞察 → 一句话定位 → 可验收的验收标准，不写无法验证的需求。</span></div>
-        <div class="cap"><b>AI 协作</b><span>提示词体系、需求分析 Skill、单工作日可交互原型，把 AI 当协作者而不是玩具。</span></div>
-        <div class="cap"><b>交付闭环</b><span>PRD / 交互 / UAT / 灰度放量 / 数据迭代，跟完整个生命周期。</span></div>
-        <div class="cap"><b>审美与实现</b><span>版式、色彩、动效自己能调；能读代码、能定位问题，不靠等排期。</span></div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="wrap foot" id="contact">
+  <section class="hero">
     <div>
-      卢璐 · 产品经理<br>
-      2648488512@qq.com ｜ 15145926938
+      <p class="kicker">PORTFOLIO · 2024—2026</p>
+      <h1>四件东西<br>都是我自己<br><em>做出来的</em></h1>
+      <p class="lede">
+        卢璐，产品经理，三年多。这四件的<b>定义、界面、数值、验收都是我定的</b>，素材和代码交给 AI，
+        一版一版改到能上线。下面都是线上跑着的版本，不是设计稿。
+      </p>
     </div>
-    <div>
-      <a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a>
-      ｜ 简历 PDF 可邮件索取
+
+    <aside class="memo" aria-label="还没做完的事">
+      <h2>还没弄完</h2>
+      <ul>
+        <li>斩神的商店只有壳，付钱那步没接</li>
+        <li>树语还挂在临时域名上</li>
+        <li>想给每件补一段录屏</li>
+      </ul>
+      <p>这几件我知道怎么做，就是还没做。</p>
+    </aside>
+  </section>
+
+  <section class="works" id="works">
+
+    <a class="work work--lg" href="zhanshen/">
+      <span class="stack">
+        <img class="stack__main" src="assets/hd/zhanshen-keyart.webp" alt="我在精神病院斩神 · 病区氛围插画" width="1800" height="1013">
+        <img class="stack__inset" src="assets/hd/zhanshen-archive.webp" alt="我在精神病院斩神 · 病历档案界面" width="2552" height="1502">
+      </span>
+      <h3>我在精神病院斩神<span>GAME</span></h3>
+      <p class="say">克苏鲁像素 Roguelike，横屏自动战斗，30 层病区。SAN 值随战斗下滑，掉到 30 强制异化：攻击更高，护盾更薄。</p>
+      <p class="mine">代码和像素素材是 AI 出的，30 层节奏表和 SAN 曲线是我一条条调的。</p>
+      <p class="caption">大图是 AI 生成的氛围图，小图是游戏实际界面。</p>
+      <ul class="meta"><li>Phaser 3</li><li>TypeScript</li><li>可在线试玩</li></ul>
+      <span class="go">进去看看 →</span>
+    </a>
+
+    <a class="work work--tall" href="tree/">
+      <span class="shot shot--phone">
+        <img src="assets/hd/tree-home.webp" alt="树语 · 树洞首页" width="1181" height="2300">
+      </span>
+      <h3>树语<span>COMMUNITY</span></h3>
+      <p class="say">情绪树洞。纸条能贴上树，也能揉成团扔进瓶子等陌生人捡；一只叫小蜗的角色记得你回来过。</p>
+      <p class="mine">插画是 AI 画的，账号、实时通知和养成规则是我定的，前后端一起上线。</p>
+      <ul class="meta"><li>Node</li><li>Socket.io</li><li>Prisma</li><li>已上线</li></ul>
+      <span class="go">进去看看 →</span>
+    </a>
+
+    <a class="work work--half" href="meow/">
+      <span class="shot">
+        <img src="assets/hd/meow-play.webp" alt="喵喵音阶森林 · 主界面" width="2552" height="1652" loading="lazy">
+      </span>
+      <h3>喵喵音阶森林<span>WEB TOY</span></h3>
+      <p class="say">七个音阶做成七只猫，敲键盘或点猫就发声。电子音、钢琴、木琴实时切换，随手弹的旋律能回退、清空、存下来。</p>
+      <p class="mine">声音全在浏览器里实时合成，没有一个音频文件；猫的动作和音高共用一份数据。</p>
+      <ul class="meta"><li>Web Audio</li><li>Canvas</li><li>两周</li></ul>
+      <span class="go">进去看看 →</span>
+    </a>
+
+    <a class="work work--half" href="ember/">
+      <span class="shot">
+        <img src="assets/hd/ember-cover.webp" alt="余烬 · 封面与角色" width="2552" height="1652" loading="lazy">
+      </span>
+      <h3>余烬 Embers<span>FICTION</span></h3>
+      <p class="say">一部原创科幻群像长篇，十章正文、六个角色，每人一张带异能等级的档案卡。顺手做了阅读器，三套视图共用一条进度线。</p>
+      <p class="mine">正文是我和 AI 一句句磨的；排版规则写了十几条，长文读起来才不累。</p>
+      <ul class="meta"><li>原生前端</li><li>十章</li><li>原创内容</li></ul>
+      <span class="go">进去看看 →</span>
+    </a>
+
+  </section>
+
+  <section class="colophon">
+    <div class="panel">
+      <h2>AI 在哪儿出力</h2>
+      <dl>
+        <dt>AI 做</dt><dd>像素与插画素材、界面代码、文案初稿、自测脚本</dd>
+        <dt>我做</dt><dd>一句话定位、关卡与数值、每一屏放什么、逐版验收</dd>
+        <dt>工具</dt><dd>Kimi · GPT · Cursor · Figma</dd>
+      </dl>
+      <p class="tiny">四件都跑在线上。截图是跑起来之后截的，不是设计稿。</p>
     </div>
-    <div>本页全部截图来自真实可运行的产品，非设计稿。</div>
-  </footer>
+
+    <div class="card">
+      <h2>卢璐</h2>
+      <p class="role">PRODUCT MANAGER</p>
+      <ul>
+        <li><a href="mailto:2648488512@qq.com">2648488512@qq.com</a></li>
+        <li>15145926938</li>
+        <li><a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a></li>
+      </ul>
+      <p class="sign">简历可以邮件找我要。</p>
+    </div>
+  </section>
 
 </main>
 
-<script src="assets/site.js"></script>
+<footer>
+  <span>卢璐 · 2026</span>
+  <span class="dash" aria-hidden="true"></span>
+  <span>四件作品均可在线打开</span>
+</footer>
+
 </body>
 </html>
