@@ -4,196 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>喵喵音阶森林 · 卢璐作品集</title>
-<meta name="description" content="把七个音阶做成七只猫的互动音乐应用：会打字就能演奏，三种音色随时切换，旋律可回退、可保存。">
-<link rel="stylesheet" href="../assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191816'/%3E%3Ctext x='16' y='23' font-size='18' fill='%23f7f4ed' text-anchor='middle' font-family='serif'%3E%E7%82%89%3C/text%3E%3C/svg%3E">
+<meta name="description" content="网页互动音乐玩具：七个音阶做成七只猫，敲键盘或点猫就能发声，三种音色随时切换，声音全部由浏览器实时合成。">
+<link rel="stylesheet" href="../assets/doc.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316150f'/%3E%3Crect x='9' y='9' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='15' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='21' width='9' height='2' fill='%23faf8f4'/%3E%3C/svg%3E">
 </head>
-<body class="p-meow">
+<body>
 
-<header class="topbar">
-  <div class="wrap topbar__in">
-    <a class="brand" href="../">卢璐 <small>Portfolio</small></a>
-    <nav class="topnav">
-      <a href="../#works">全部作品</a>
-      <a href="https://github.com/Miolulu/meow-chime" target="_blank" rel="noopener">源码 ↗</a>
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="bar__back" href="../">← 作品集</a>
+    <span class="bar__name">卢璐 · PORTFOLIO</span>
+    <nav class="bar__nav">
+      <a href="https://miolulu.github.io/meow-chime/" target="_blank" rel="noopener">在线玩 ↗</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main class="wrap">
 
-  <div class="wrap"><a class="back" href="../#works">← 全部作品</a></div>
+  <section class="hero">
+    <p class="hero__no">作品 03 / WEB TOY</p>
+    <h1>喵喵音阶森林<small>Meow Chime</small></h1>
+    <ul class="tags">
+      <li>音乐玩具</li><li>Web Audio</li><li>Canvas</li><li>无音频文件</li>
+    </ul>
+    <p class="hero__sub">七个音阶，七只猫。敲键盘或者点猫就能发声，不用认识任何一个音符的名字。</p>
 
-  <section class="wrap p-hero">
-    <div class="p-hero__no">作品 02 / WEB APP</div>
-    <h1>喵喵音阶森林</h1>
-    <p class="p-hero__sub">
-      七个音阶，七只猫。敲键盘或者点猫就能发声，不用认识任何一个音符的名字。
-    </p>
-
-    <dl class="p-meta">
-      <div><dt>形态</dt><dd>网页互动音乐应用</dd></div>
-      <div><dt>我的角色</dt><dd>概念 · 交互 · 视觉与音色调性</dd></div>
-      <div><dt>周期</dt><dd>2 周 · 业余项目</dd></div>
+    <dl class="spec">
+      <div><dt>平台</dt><dd>桌面与移动端 Web</dd></div>
       <div><dt>技术</dt><dd>TypeScript · Canvas · Web Audio</dd></div>
+      <div><dt>状态</dt><dd>线上可玩</dd></div>
     </dl>
 
     <div class="cta">
-      <a class="btn" href="https://miolulu.github.io/meow-chime/" target="_blank" rel="noopener">在线体验 ↗</a>
-      <a class="btn btn--ghost" href="https://github.com/Miolulu/meow-chime" target="_blank" rel="noopener">查看源码</a>
+      <a class="btn" href="https://miolulu.github.io/meow-chime/" target="_blank" rel="noopener">在线玩 ↗</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/meow-chime" target="_blank" rel="noopener">源码</a>
     </div>
   </section>
 
-  <section class="wrap" style="padding-bottom:8px">
-    <figure class="lead-shot">
-      <img src="../assets/meow/02-forest.webp" alt="喵喵音阶森林主界面：七只猫站在睡莲叶上，下方是三排发光音阶键">
-      <figcaption><span>主界面</span><span>七只猫各守一个音阶，底部三排是低、中、高三个八度</span></figcaption>
-    </figure>
+  <figure class="shot">
+    <img src="../assets/hd/meow-forest.webp" alt="喵喵音阶森林主界面：七只猫在森林舞台上，底部三排发光键位" width="2552" height="1652">
+    <figcaption><b>主界面</b><span>七只猫各守一个音阶，底下三排键位分别是低、中、高三个八度</span></figcaption>
+  </figure>
+
+  <section class="sec body">
+    <h2>怎么弹</h2>
+    <p>三排按键对应三个八度：Q W E R T Y U 是高音，A S D F G H J 是中音，Z X C V B N M 是低音。手放上去位置就固定了，不看屏幕也能弹。</p>
+    <p>不想用键盘就点猫。鼠标移动时魔法棒会拖出一道光尾，按下去的那只猫会亮起来。</p>
+
+    <h2 style="margin-top:34px">三种音色</h2>
+    <p>电子音、钢琴、木琴，随时切换。换音色不会清空已经弹过的内容，同一段旋律可以换一种气质再听一遍。</p>
+
+    <h2 style="margin-top:34px">六个动作</h2>
+    <p>播放、随机、创作、回退、清空、保存，全压在底部一条。随机是给不知道怎么开始的人的示范：先听一段，再改它。</p>
+
+    <h2 style="margin-top:34px">声音</h2>
+    <p>没有一个音频文件，全部由浏览器实时合成。打开页面就能弹，不用等加载，也不会因为网络卡住而没声音。</p>
   </section>
 
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>它是什么</h2>
-      <p>给「想碰音乐但怕学乐理」的人，做一个五分钟就能出声音的东西。</p>
-    </div>
-
-    <p class="pull">
-      不用先学五线谱，也不用先买乐器。<br>
-      把「发声」这件事的门槛，压到一次按键。
-    </p>
-
-    <div class="blocks" style="margin-top:44px">
-      <div class="block">
-        <div class="block__no">01</div>
-        <div>
-          <h3>把音阶变成七个角色</h3>
-          <p>每只猫守一个音阶，站在自己的睡莲叶上。敲到它就亮起来、有音效、有拖尾。
-             猫的形象和乐器性格是对应的——白猫轻、橘猫暖、黑猫闷——玩家在记住角色之前，
-             已经记住了它们的声音。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">02</div>
-        <div>
-          <h3>三种音色，一种弹法</h3>
-          <p>电子音、钢琴、木琴随时切换。换音色不清空已经弹过的内容，同一段旋律换一种气质再听一遍——
-             这是最便宜、也最容易被分享的「再玩一次」的理由。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">03</div>
-        <div>
-          <h3>键盘就是乐器</h3>
-          <p>高音 Q W E R T Y U，中音 A S D F G H J，低音 Z X C V B N M。
-             三排按键对应三个八度，手放上去位置就固定了，不看屏幕也能弹。
-             鼠标移动时魔法棒会拖出光尾，让「我在演奏」这件事有实感。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">04</div>
-        <div>
-          <h3>从瞎点到存下来</h3>
-          <p>播放、随机、创作、回退、清空、保存——六个动作覆盖从「随手点两下」到「存一段旋律」的全过程。
-             「随机」是给不会开始的人的示范：先听一段，再改它。保存则是把玩过的东西变成作品，
-             下次回来还在。</p>
-        </div>
+  <section class="sec sec--line">
+    <h2>界面</h2>
+    <div class="gal">
+      <div class="gal gal--two" style="margin-top:0">
+        <figure>
+          <img src="../assets/hd/meow-welcome.webp" alt="开场说明：轻触猫咪、键盘分区、点击随机、下方按钮管理演奏流程" width="2552" height="1652" loading="lazy">
+          <figcaption><b>开场</b><span>一张说明卡：四条操作提示，一条一条列清楚</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/hd/meow-play.webp" alt="演奏状态：键位被点亮，右侧展开保存面板" width="2552" height="1652" loading="lazy">
+          <figcaption><b>演奏中</b><span>按下的键位亮起来，右侧一角收着存下来的旋律</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>卡在哪儿</h2>
-      <p>这几处改了好几版，最后一版砍掉的比加上的多。</p>
-    </div>
-
-    <dl class="judg">
-      <div class="judg__row">
-        <dt>要不要顺便教乐理</dt>
-        <dd>第一版每个键上都标了音名，做完像台电子琴教学仪，删了。现在只让人先听到自己按出来的声音，想懂的人自己去查。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>画面已经很满，按钮往哪塞</dt>
-        <dd>全压到底部一条，操作层只留猫和发光的键位。桌面能敲键盘，手机上按钮会挤——移动端我没认真适配。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>随机旋律是不是多余</dt>
-        <dd>一开始当成教学，后来发现它是个引子：给一段能听的，按两次回退改一个音，人就从听的变成弹的。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>保存做成什么样</dt>
-        <dd>右侧常驻面板，写「保存旋律」不写「保存进度」。存下来的是十几秒的片段，不是关卡状态。</dd>
-      </div>
-    </dl>
-  </section>
-
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>界面实拍</h2>
-      <p>三个状态：进来、在玩、在创作。</p>
-    </div>
-
-    <div class="gallery">
-      <figure class="wide">
-        <img src="../assets/meow/01-welcome.webp" alt="欢迎弹窗，列出键位与操作方式">
-        <figcaption><b>第一次进来</b> · 一张弹窗讲完所有规则：敲猫、三排键位、鼠标拖尾、随机、底部按钮。
-          不多不少，看完正好可以开始。</figcaption>
-      </figure>
-      <figure>
-        <img src="../assets/meow/02-forest.webp" alt="演奏中的森林场景">
-        <figcaption><b>演奏中</b> · 猫、音符、萤火和月光都在动，但视觉重心始终在底部三排键上。</figcaption>
-      </figure>
-      <figure>
-        <img src="../assets/meow/03-create.webp" alt="创作模式，键位标出音名">
-        <figcaption><b>创作模式</b> · 键位上直接标出 DO RE MI FA SOL LA，想记录旋律的人此时才有必要看音名。</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>怎么做的</h2>
-      <p>一个人做完视觉、交互和音频链路。</p>
-    </div>
-
-    <div class="about">
-      <div>
-        <p>整体是一个 Canvas 应用：背景、猫、粒子分三层绘制，互不影响帧率。
-           音频用 Web Audio 实时合成而不是采样播放，按键到出声的延迟压到人感觉不到的程度——
-           这一点在音乐类产品里不是优化项，是及格线。</p>
-        <p>素材处理和批量压缩用 Python 脚本跑，一次产出多种尺寸和格式，
-           保证首屏不用等大图。整个页面首屏控制在几秒内可交互。</p>
-        <p>验收标准只有一个：把手机横过来，随便按十下，必须每一次都有声音、有光、不卡。</p>
-      </div>
-      <div>
-        <div class="stack">
-          <span>TypeScript</span>
-          <span>Canvas 2D</span>
-          <span>Web Audio API</span>
-          <span>Vite</span>
-          <span>Python 资源脚本</span>
-          <span>三层渲染</span>
-        </div>
-        <p style="margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.8">
-          说明：美术资源由 AI 生成并按统一调色处理，交互设计与音色搭配由我完成，
-          代码由 AI 协作实现。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <nav class="wrap pager">
-    <a href="../zhanshen/"><small>上一件</small><b>← 我在精神病院斩神</b></a>
-    <a href="../tree/"><small>下一件</small><b>树语 →</b></a>
+  <nav class="pager">
+    <a href="../tree/"><small>PREV</small><b>← 树语</b></a>
+    <a href="../ember/"><small>NEXT</small><b>余烬 Embers →</b></a>
   </nav>
 
-  <footer class="wrap foot">
-    <div>卢璐 · 产品经理｜2648488512@qq.com</div>
-    <div><a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a></div>
+  <footer class="foot">
+    <b>卢璐</b><span>产品经理</span>
+    <span class="sp"></span>
+    <a href="mailto:2648488512@qq.com">2648488512@qq.com</a>
+    <a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu ↗</a>
   </footer>
 
 </main>
-
-<script src="../assets/site.js"></script>
 </body>
 </html>

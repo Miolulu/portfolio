@@ -4,203 +4,104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>我在精神病院斩神 · 卢璐作品集</title>
-<meta name="description" content="克苏鲁式像素 Roguelike 试玩版：横屏自动战斗、30 层病区、SAN 异化机制，UI 全部做成病历。">
-<link rel="stylesheet" href="../assets/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191816'/%3E%3Ctext x='16' y='23' font-size='18' fill='%23f7f4ed' text-anchor='middle' font-family='serif'%3E%E7%82%89%3C/text%3E%3C/svg%3E">
+<meta name="description" content="克苏鲁式像素 Roguelike：横屏自动战斗、30 层病区、SAN 低于 30 自动异化，界面全部做成病历。">
+<link rel="stylesheet" href="../assets/doc.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316150f'/%3E%3Crect x='9' y='9' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='15' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='21' width='9' height='2' fill='%23faf8f4'/%3E%3C/svg%3E">
 </head>
-<body class="p-zhanshen">
+<body>
 
-<header class="topbar">
-  <div class="wrap topbar__in">
-    <a class="brand" href="../">卢璐 <small>Portfolio</small></a>
-    <nav class="topnav">
-      <a href="../#works">全部作品</a>
-      <a href="https://github.com/Miolulu/hospital-slayer-game" target="_blank" rel="noopener">源码 ↗</a>
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="bar__back" href="../">← 作品集</a>
+    <span class="bar__name">卢璐 · PORTFOLIO</span>
+    <nav class="bar__nav">
+      <a href="https://miolulu.github.io/hospital-slayer-game/play/" target="_blank" rel="noopener">在线试玩 ↗</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main class="wrap">
 
-  <div class="wrap"><a class="back" href="../#works">← 全部作品</a></div>
+  <section class="hero">
+    <p class="hero__no">作品 01 / H5 GAME</p>
+    <h1>我在精神病院斩神<small>Hospital Slayer</small></h1>
+    <ul class="tags">
+      <li>像素 Roguelike</li><li>横屏自动战斗</li><li>30 层病区</li><li>SAN 异化</li><li>可在线试玩</li>
+    </ul>
+    <p class="hero__sub">你是患者 0001，从顶楼一路往下砍穿 30 层病区。横屏自动战斗，唯一压在身上的数值叫 SAN。</p>
 
-  <section class="wrap p-hero">
-    <div class="p-hero__no">作品 01 / GAME</div>
-    <h1>我在精神病院斩神</h1>
-    <p class="p-hero__sub">
-      克苏鲁式像素 Roguelike，横屏自动战斗。你是「患者 0001」，
-      要一路砍穿 30 层病区——打得越久，SAN 值掉得越快。
-    </p>
-
-    <dl class="p-meta">
-      <div><dt>形态</dt><dd>横屏 H5 游戏 · 手机优先</dd></div>
-      <div><dt>我的角色</dt><dd>产品定义 · 关卡与数值 · UI 与文案</dd></div>
-      <div><dt>周期</dt><dd>3 周 GameJam 试玩版</dd></div>
-      <div><dt>技术</dt><dd>Phaser 3 · TypeScript · Vite</dd></div>
+    <dl class="spec">
+      <div><dt>平台</dt><dd>移动端横屏 H5</dd></div>
+      <div><dt>引擎</dt><dd>Phaser 3 · TypeScript · Vite</dd></div>
+      <div><dt>状态</dt><dd>线上可试玩</dd></div>
     </dl>
 
     <div class="cta">
       <a class="btn" href="https://miolulu.github.io/hospital-slayer-game/play/" target="_blank" rel="noopener">在线试玩 ↗</a>
-      <a class="btn btn--ghost" href="https://github.com/Miolulu/hospital-slayer-game" target="_blank" rel="noopener">查看源码</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/hospital-slayer-game" target="_blank" rel="noopener">源码</a>
     </div>
   </section>
 
-  <section class="wrap" style="padding-bottom:8px">
-    <figure class="lead-shot">
-      <img src="../assets/zhanshen/01-title.webp" alt="《我在精神病院斩神》标题画面，暗绿色调、触手与铁门">
-      <figcaption><span>标题画面</span><span>主菜单只有三件事：看病历、打主线、打每日</span></figcaption>
-    </figure>
+  <figure class="shot">
+    <img src="../assets/hd/zhanshen-title.webp" alt="标题画面：暗绿色的病院大门，三个入口" width="2552" height="1502">
+    <figcaption><b>标题画面</b><span>三个入口：病历、主线、每日挑战</span></figcaption>
+  </figure>
+
+  <section class="sec body">
+    <h2>玩法</h2>
+    <p>横屏自动战斗，角色自己出手，玩家管的是走位、捡掉落、什么时候停手。每场战斗会持续掉 SAN，低于 30 自动进入异化：攻击和出怪压力一起上升，护盾吸收下降。想要强度，就得先接受更难收住的局面。</p>
+    <p>主线每层 10 波，第 7 波是本层小首领，打完才允许继续往下；每日挑战 50 波，末尾是月度首领。</p>
+
+    <h2 style="margin-top:34px">病历</h2>
+    <p>所有界面按病历做。角色页不是属性面板，是一张病人档案：患者 0001、绰号〈光〉、病历编号 W07-01，症状记录写着失聪、低语幻听、红光过敏。武器分剑、枪、鞭、炮四类，收在「武器皮肤」页里。</p>
+    <p>症状记录同时是解锁条件——设定和解锁长在同一张纸上。</p>
+
+    <h2 style="margin-top:34px">关卡</h2>
+    <p>30 层病区，前十层共用一套病房素材，靠光照、敌人配比和波次数量拉开差别。同一间病房，白天和夜里是两种打法。</p>
   </section>
 
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>它是什么</h2>
-      <p>一句话：在病院里活得更久，代价是变得不再像人。</p>
-    </div>
-
-    <p class="pull">
-      自动战斗把手腾出来做走位，<br>
-      剩下的所有压力都压在一个数值上——SAN。
-    </p>
-
-    <div class="blocks" style="margin-top:44px">
-      <div class="block">
-        <div class="block__no">01</div>
-        <div>
-          <h3>UI 全部做成病历</h3>
-          <p>角色页不是「属性面板」，是一张病人档案：患者 0001、绰号 &lt;光&gt;、病历编号 W07-01，
-             症状记录写着「失聪 / 低语幻听 / 红光过敏反应」。武器页叫武器皮肤，剑、枪、鞭、炮分四类，
-             每一把都像从病院里捡来的。症状记录既是设定，也是皮肤和武器的解锁条件——两件事长在同一张纸上。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">02</div>
-        <div>
-          <h3>SAN 掉到 30 就异化</h3>
-          <p>SAN 值随战斗持续下滑，低于 30 自动进入异化：攻击提升、出怪压力提升、护盾吸收下降。
-             玩家得自己选：继续吃这个强度红利，还是想办法把理智拉回来。越打越强的那条路，和越打越危险的是同一条。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">03</div>
-        <div>
-          <h3>30 层的节奏表</h3>
-          <p>主线每层 10 波，第 7 波是本层小首领，打完才允许往下走；每日挑战 50 波，最后是月度首领。
-             前十层用同一套病区素材换光照和敌人配比，同一间病房，白天和夜里是两种打法。</p>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block__no">04</div>
-        <div>
-          <h3>首屏只加载必需资源</h3>
-          <p>武器、主线、档案、每日挑战、战斗资源按界面分组懒加载。首屏只等标题和一屏病房，
-             点进战斗的那几秒才补该层需要的贴图。首屏只等标题和一屏病房，点进战斗那几秒才补该层贴图。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>卡在哪儿</h2>
-      <p>这几处当时卡了很久，有的到现在也没弄好。</p>
-    </div>
-
-    <dl class="judg">
-      <div class="judg__row">
-        <dt>自动攻击，会不会玩着太省事</dt>
-        <dd>会。第一版纯自动，打到第三层就困了。后来把操作压成「去哪、捡不捡」两件事，用走位和掉落逼人做选择。没根治，只是让无聊来得晚一点。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>三周做不出 30 层内容</dt>
-        <dd>前十层用同一套病区素材，换光照、敌人配比和波次数量拉开差别。省下来的时间全砸在每层第 7 波的小首领上。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>对白一插，节奏就断</dt>
-        <dd>只在进层和换层时出现，战斗里一句不插。想读的点开看，不想读的点跳过。被跳过最多的是开场那段两百字独白，我后来也没改。</dd>
-      </div>
-      <div class="judg__row">
-        <dt>商店要不要接支付</dt>
-        <dd>没接。商店只做到能看能装备，掉落的皮肤能预览不能买。真要上线得先处理退款和审核，这部分空着。</dd>
-      </div>
-    </dl>
-  </section>
-
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>界面实拍</h2>
-      <p>全部来自可运行版本，非设计稿。点开可放大。</p>
-    </div>
-
-    <div class="gallery">
-      <figure class="wide">
-        <img src="../assets/zhanshen/02-floor.webp" alt="主线通关的楼层详情页：病房插画与可能出现敌人">
-        <figcaption><b>楼层详情</b> · 左侧是本层实景插画，右侧列出「可能出现」的六种敌人，
-          让玩家在进门之前就能判断该带什么武器。</figcaption>
-      </figure>
+  <section class="sec sec--line">
+    <h2>界面</h2>
+    <div class="gal">
       <figure>
-        <img src="../assets/zhanshen/03-story.webp" alt="进入病区时的对白场景">
-        <figcaption><b>入场对白</b> · 等距像素病房 + 一句台词。叙事只在换层时出现，不打断战斗。</figcaption>
+        <img src="../assets/hd/zhanshen-floor.webp" alt="楼层详情页：左侧病房插画，右侧「可能出现」的六种敌人" width="2072" height="1232" loading="lazy">
+        <figcaption><b>楼层详情</b><span>左边是本层实景，右边列出可能出现的六种敌人，进门之前就能决定带什么武器</span></figcaption>
       </figure>
-      <figure>
-        <img src="../assets/zhanshen/04-combat.webp" alt="战斗中：角色发光、敌人围攻、波次提示">
-        <figcaption><b>战斗</b> · 顶部是「第 1/6 波 · 停止出怪」，左下是经验与 SAN。
-          夜里同一间病房，光照和敌人配比全变了。</figcaption>
-      </figure>
-      <figure class="wide">
-        <img src="../assets/zhanshen/05-archive.webp" alt="病历档案界面：病人姓名、编号、症状记录">
-        <figcaption><b>病历档案</b> · 角色、皮肤、商店、BOSS 掉落都收在这一页。
-          「症状记录」既是设定，也是解锁条件。</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="wrap section">
-    <div class="section__head">
-      <h2>怎么做的</h2>
-      <p>策划、实现、验收由我一个人串完，AI 负责写代码。</p>
-    </div>
-
-    <div class="about">
-      <div>
-        <p>工程按「场景表现 / 领域规则 / 基础设施 / 平台适配」四层拆开，<code>src/main.ts</code>
-           只做一件事：加载主场景。数值、武器成长、SAN 规则都在领域层，改平衡不用碰渲染。</p>
-        <p>资源走 Builda 的宿主能力：有 CDN 清单就从清单读，本地预览用项目里的 <code>assets</code> 兜底，
-           地址不写进游戏逻辑。开发模式用 <code>?dev=1</code> 打开，能直接跳楼层、调波次、开无敌，
-           自测一遍 30 层不用真的打三小时。</p>
-        <p>验收标准是我自己定的：连续打三层不掉帧、每层第七波必须能看出「这层不一样」、
-           手机横屏下所有按钮单手够得到。</p>
+      <div class="gal gal--two" style="margin-top:0">
+        <figure>
+          <img src="../assets/hd/zhanshen-fight.webp" alt="战斗中：角色被鹿角病人包围，顶部显示波次" width="2552" height="1502" loading="lazy">
+          <figcaption><b>战斗</b><span>顶部是波次与倒计时，左下角是经验条和 SAN</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/hd/zhanshen-enter.webp" alt="进入病区：屏幕中央一只多角异形，四周是围上来的病人" width="2552" height="1502" loading="lazy">
+          <figcaption><b>开局</b><span>第 1 波，倒计时 5 秒，中间那只多角异形已经在场</span></figcaption>
+        </figure>
       </div>
-      <div>
-        <div class="stack">
-          <span>Phaser 3</span>
-          <span>TypeScript</span>
-          <span>Vite</span>
-          <span>Vitest</span>
-          <span>Builda SDK</span>
-          <span>分组懒加载</span>
-          <span>像素美术规范</span>
-        </div>
-        <p style="margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.8">
-          说明：试玩版素材由 AI 生成并按统一像素规格后处理，代码由 AI 协作完成，
-          关卡结构、数值与所有界面决策由我完成。
-        </p>
+      <div class="gal gal--two" style="margin-top:0">
+        <figure>
+          <img src="../assets/hd/zhanshen-archive.webp" alt="病历档案：病人姓名、编号、症状记录" width="2552" height="1502" loading="lazy">
+          <figcaption><b>病历档案</b><span>角色、皮肤、商店、BOSS 掉落都收在这一页</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/hd/zhanshen-weapon.webp" alt="武器页：剑、枪、鞭、炮四类皮肤" width="2072" height="1232" loading="lazy">
+          <figcaption><b>武器皮肤</b><span>剑、枪、鞭、炮四类，每一把都像从病院里捡来的</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <nav class="wrap pager">
-    <a href="../meow/"><small>下一件</small><b>喵喵音阶森林 →</b></a>
-    <a href="../#works"><small>Index</small><b>全部作品</b></a>
+  <nav class="pager">
+    <a href="../"><small>INDEX</small><b>全部作品</b></a>
+    <a href="../tree/"><small>NEXT</small><b>树语 →</b></a>
   </nav>
 
-  <footer class="wrap foot">
-    <div>卢璐 · 产品经理｜2648488512@qq.com</div>
-    <div><a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a></div>
+  <footer class="foot">
+    <b>卢璐</b><span>产品经理</span>
+    <span class="sp"></span>
+    <a href="mailto:2648488512@qq.com">2648488512@qq.com</a>
+    <a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu ↗</a>
   </footer>
 
 </main>
-
-<script src="../assets/site.js"></script>
 </body>
 </html>
