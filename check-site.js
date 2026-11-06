@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const BASE = 'http://127.0.0.1:5175/';
+const BASE = process.env.BASE || 'http://127.0.0.1:5175/';
 const PAGES = ['', 'zhanshen/', 'meow/', 'tree/', 'ember/'];
 const OUT = 'C:/Users/mio/WorkBuddy/2026-11-05-14-04-14/portfolio/shots/site';
 fs.mkdirSync(OUT, { recursive: true });
