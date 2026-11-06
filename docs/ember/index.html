@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>余烬 Embers · 卢璐作品集</title>
+<meta name="description" content="一部原创科幻群像长篇，和一个愿意陪人读完它的阅读器：十章正文、六张角色档案、三套视图一条进度线。">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="p-ember">
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="../">卢璐 <small>Portfolio</small></a>
+    <nav class="topnav">
+      <a href="../#works">全部作品</a>
+      <a href="https://github.com/Miolulu/ember-novel" target="_blank" rel="noopener">源码 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap"><a class="back" href="../#works">← 全部作品</a></div>
+
+  <section class="wrap p-hero">
+    <div class="p-hero__no">作品 04 / READING</div>
+    <h1>余烬 Embers</h1>
+    <p class="p-hero__sub">
+      一部原创科幻群像长篇，和一个愿意陪人读完它的阅读器。
+      十章正文，六个角色，每人一张带异能等级的档案卡。
+    </p>
+
+    <dl class="p-meta">
+      <div><dt>形态</dt><dd>在线阅读器 · 桌面与手机</dd></div>
+      <div><dt>我的角色</dt><dd>内容 · 信息结构 · 排版与交互</dd></div>
+      <div><dt>周期</dt><dd>2 周 · 业余项目</dd></div>
+      <div><dt>技术</dt><dd>原生 HTML / CSS / JS · GitHub Pages</dd></div>
+    </dl>
+
+    <div class="cta">
+      <a class="btn" href="https://miolulu.github.io/ember-novel/" target="_blank" rel="noopener">在线阅读 ↗</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/ember-novel" target="_blank" rel="noopener">查看源码</a>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:8px">
+    <figure class="lead-shot">
+      <img src="../assets/ember/01-cover.webp" alt="余烬封面页：红色书名、主题词、六个角色头像">
+      <figcaption><span>封面</span><span>书名、主题词、一句题记、六个角色头像——一屏讲完这是一本什么书</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>它是什么</h2>
+      <p>一个不试图教你怎么读的阅读器。</p>
+    </div>
+
+    <p class="pull">
+      群像小说的难点从来不是字数，<br>
+      是读者在第三章就忘了第一章那个人是谁。
+    </p>
+
+    <div class="blocks" style="margin-top:44px">
+      <div class="block">
+        <div class="block__no">01</div>
+        <div>
+          <h3>三套视图，一条入口</h3>
+          <p>封面、目录、角色共用左侧栏，切换不丢阅读位置。封面负责「这是什么」，
+             目录负责「读哪一章」，角色负责「这个人是谁」——三个问题分开回答，
+             而不是塞进一个长长的落地页。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">02</div>
+        <div>
+          <h3>群像的入口是角色卡</h3>
+          <p>六个角色各占一行：名字、在队里的位置、异能名称与等级。
+             「灼野小队 · 队长 / 能量操控 · S级」——两行信息就够读者在脑子里给人排座次，
+             也够他在忘了谁是谁的时候一眼找回来。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">03</div>
+        <div>
+          <h3>长文排版按屏幕重排</h3>
+          <p>正文栏宽 760px、行高 1.9、段间距大于行距，暗色底配低对比正文。
+             窄屏下自动收窄字号与边距，手机上不会出现一行只有五个字的窘境。
+             排版的目标只有一个：让人忘记自己在看网页。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">04</div>
+        <div>
+          <h3>进度是一条细线</h3>
+          <p>顶部 3px 进度条，读到哪一目了然，但不占版面。
+             侧栏高亮当前章节，往下滚的时候不会因为迷路而关掉页面——
+             长文产品最常见的流失点，是读者不知道自己还剩多少。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>几个判断</h2>
+      <p>阅读器最大的失败，是让人注意到阅读器。</p>
+    </div>
+
+    <dl class="judg">
+      <div class="judg__row">
+        <dt>小说是主角，界面是配角</dt>
+        <dd>没有字号调节面板、没有主题切换、没有阅读偏好设置。默认值调好，比给用户十个选项更尊重人。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>固定侧栏，而不是下拉目录</dt>
+        <dd>十章加序章尾声，长度刚好一屏能放下。固定住就省掉一次「展开—寻找—收起」，
+            也让读者随时知道自己在整本书的哪个位置。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>角色卡只放三行</dt>
+        <dd>名字、位置、异能。不写性格小传、不写关系图——那些应该在正文里长出来。
+            卡片是索引，不是设定集。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>暗色 + 一点红</dt>
+        <dd>主题色只出现在书名、当前章节和强调词上，正文永远是低对比灰白。
+            红色在这里不是装饰，是这个世界「正在燃烧」的提示。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>界面实拍</h2>
+      <p>封面、角色、正文三个状态。</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="wide">
+        <img src="../assets/ember/01-cover.webp" alt="余烬封面页，红色书名与六个角色头像">
+        <figcaption><b>封面</b> · 一屏之内：书名、题材、题记、队伍构成。读者不用点任何东西就知道要不要读下去。</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/ember/02-roles.webp" alt="角色视图：六个角色与异能等级">
+        <figcaption><b>角色</b> · 六个角色、六种异能、六个等级。侧栏就是人物索引，读正文时随时能回头看。</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/ember/03-reading.webp" alt="正文阅读页，窄栏排版与顶部进度线">
+        <figcaption><b>正文</b> · 760px 正文栏、1.9 行高、顶部细进度条。长段落不压字，暗底不刺眼。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>怎么做的</h2>
+      <p>刻意用一个框架都不用的方式做，为了把加载做到最轻。</p>
+    </div>
+
+    <div class="about">
+      <div>
+        <p>整站是一个 HTML 文件加原生 JS，没有构建步骤，没有框架运行时。
+           首屏只有一个请求，打开就是正文。插图统一转 WebP 并压到原来的十分之一，
+           在手机上也不用等图。</p>
+        <p>部署走 GitHub Actions 到 Pages，改完推上去就生效。
+           字体只用系统衬线，避免中文网络字体那几百 KB 的首屏阻塞。</p>
+        <p>验收标准：手机 4G 下三秒内出正文；连续读十章，滚动不掉帧；任何一章的排版都不能出现孤字成行。</p>
+      </div>
+      <div>
+        <div class="stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Vanilla JS</span>
+          <span>WebP</span>
+          <span>GitHub Actions</span>
+          <span>系统衬线字体</span>
+        </div>
+        <p style="margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.8">
+          说明：正文与人物设定为原创内容；插画由 AI 生成并统一调色；排版与交互由我设计。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="wrap pager">
+    <a href="../tree/"><small>上一件</small><b>← 树语</b></a>
+    <a href="../zhanshen/"><small>回到开头</small><b>我在精神病院斩神 →</b></a>
+  </nav>
+
+  <footer class="wrap foot">
+    <div>卢璐 · 产品经理｜2648488512@qq.com</div>
+    <div><a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a></div>
+  </footer>
+
+</main>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

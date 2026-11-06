@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我在精神病院斩神 · 卢璐作品集</title>
+<meta name="description" content="克苏鲁式像素 Roguelike 试玩版：横屏自动战斗、30 层病区、SAN 异化机制，UI 全部做成病历。">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="p-zhanshen">
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="../">卢璐 <small>Portfolio</small></a>
+    <nav class="topnav">
+      <a href="../#works">全部作品</a>
+      <a href="https://github.com/Miolulu/hospital-slayer-game" target="_blank" rel="noopener">源码 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap"><a class="back" href="../#works">← 全部作品</a></div>
+
+  <section class="wrap p-hero">
+    <div class="p-hero__no">作品 01 / GAME</div>
+    <h1>我在精神病院斩神</h1>
+    <p class="p-hero__sub">
+      克苏鲁式像素 Roguelike，横屏自动战斗。你是「患者 0001」，
+      要一路砍穿 30 层病区——打得越久，SAN 值掉得越快。
+    </p>
+
+    <dl class="p-meta">
+      <div><dt>形态</dt><dd>横屏 H5 游戏 · 手机优先</dd></div>
+      <div><dt>我的角色</dt><dd>产品定义 · 关卡与数值 · UI 与文案</dd></div>
+      <div><dt>周期</dt><dd>3 周 GameJam 试玩版</dd></div>
+      <div><dt>技术</dt><dd>Phaser 3 · TypeScript · Vite</dd></div>
+    </dl>
+
+    <div class="cta">
+      <a class="btn" href="https://miolulu.github.io/hospital-slayer-game/play/" target="_blank" rel="noopener">在线试玩 ↗</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/hospital-slayer-game" target="_blank" rel="noopener">查看源码</a>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:8px">
+    <figure class="lead-shot">
+      <img src="../assets/zhanshen/01-title.webp" alt="《我在精神病院斩神》标题画面，暗绿色调、触手与铁门">
+      <figcaption><span>标题画面</span><span>主菜单只有三件事：看病历、打主线、打每日</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>它是什么</h2>
+      <p>一句话：在病院里活得更久，代价是变得不再像人。</p>
+    </div>
+
+    <p class="pull">
+      自动战斗把手腾出来做走位，<br>
+      剩下的所有压力都压在一个数值上——SAN。
+    </p>
+
+    <div class="blocks" style="margin-top:44px">
+      <div class="block">
+        <div class="block__no">01</div>
+        <div>
+          <h3>UI 全部做成病历</h3>
+          <p>角色页不是「属性面板」，是一张病人档案：患者 0001、绰号 &lt;光&gt;、病历编号 W07-01，
+             症状记录写着「失聪 / 低语幻听 / 红光过敏反应」。武器页叫武器皮肤，剑、枪、鞭、炮分四类，
+             每一把都像从病院里捡来的。把系统包装成叙事，玩家不用读设定就会相信这个世界。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">02</div>
+        <div>
+          <h3>把恐怖做成机制，而不是气氛</h3>
+          <p>SAN 值随战斗持续下滑，低于 30 自动进入异化：攻击提升、出怪压力提升、护盾吸收下降。
+             玩家不是被吓到，而是被逼着做选择——继续吃这个强度红利，还是想办法把理智拉回来。
+             恐怖感来自「你正在变成你要砍的东西」。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">03</div>
+        <div>
+          <h3>30 层的节奏表</h3>
+          <p>主线每层 10 波，第 7 波是本层小首领，打完才允许往下走；每日挑战 50 波，最后是月度首领。
+             前十层用同一套病区素材换光照和敌人配比，玩家的新鲜感来自节奏而不是新贴图——
+             这是试玩版里最省钱、也最有效的一个决定。</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block__no">04</div>
+        <div>
+          <h3>首屏只加载必需资源</h3>
+          <p>武器、主线、档案、每日挑战、战斗资源按界面分组懒加载。首屏只等标题和一屏病房，
+             点进战斗的那几秒才补该层需要的贴图。手机上「点开就能玩」比「加载完全部」重要得多。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>几个判断</h2>
+      <p>做试玩版时真正纠结的地方，以及最后怎么定的。</p>
+    </div>
+
+    <dl class="judg">
+      <div class="judg__row">
+        <dt>自动攻击，还是手动操作</dt>
+        <dd>横屏手机上双手都被占住，手动攻击必然牺牲走位。最后选自动攻击 + 手动走位 + 手动吸掉落：
+            操作只剩「去哪」和「捡不捡」，两个都是决策，不是手感。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>叙事放在哪，才不打断节奏</dt>
+        <dd>对白只在进入楼层和换层时出现，战斗里一句台词都不插。想读的人点一下看完，
+            不想读的人点「跳过」，两边都不吃亏。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>三周能做出多少内容</dt>
+        <dd>不做新地图，做节奏：同一套病区素材，用日/夜光照、敌人配比和波次数拉开差异。
+            玩家记住的是「这层好难」，不是「这层又是那个病房」。</dd>
+      </div>
+      <div class="judg__row">
+        <dt>商店与皮肤要不要进试玩版</dt>
+        <dd>要，但只作为「看得见拿不到」的目标。皮肤、BOSS 掉落、付费点全部预留了结构，
+            试玩版里能看能装备，付费链路先不接——先验证玩家想不想要，再谈怎么卖。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>界面实拍</h2>
+      <p>全部来自可运行版本，非设计稿。点开可放大。</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="wide">
+        <img src="../assets/zhanshen/02-floor.webp" alt="主线通关的楼层详情页：病房插画与可能出现敌人">
+        <figcaption><b>楼层详情</b> · 左侧是本层实景插画，右侧列出「可能出现」的六种敌人，
+          让玩家在进门之前就能判断该带什么武器。</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/zhanshen/03-story.webp" alt="进入病区时的对白场景">
+        <figcaption><b>入场对白</b> · 等距像素病房 + 一句台词。叙事只在换层时出现，不打断战斗。</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/zhanshen/04-combat.webp" alt="战斗中：角色发光、敌人围攻、波次提示">
+        <figcaption><b>战斗</b> · 顶部是「第 1/6 波 · 停止出怪」，左下是经验与 SAN。
+          夜里同一间病房，光照和敌人配比全变了。</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="../assets/zhanshen/05-archive.webp" alt="病历档案界面：病人姓名、编号、症状记录">
+        <figcaption><b>病历档案</b> · 角色、皮肤、商店、BOSS 掉落都收在这一页。
+          「症状记录」既是设定，也是解锁条件。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section__head">
+      <h2>怎么做的</h2>
+      <p>策划、实现、验收由我一个人串完，AI 负责写代码。</p>
+    </div>
+
+    <div class="about">
+      <div>
+        <p>工程按「场景表现 / 领域规则 / 基础设施 / 平台适配」四层拆开，<code>src/main.ts</code>
+           只做一件事：加载主场景。数值、武器成长、SAN 规则都在领域层，改平衡不用碰渲染。</p>
+        <p>资源走 Builda 的宿主能力：有 CDN 清单就从清单读，本地预览用项目里的 <code>assets</code> 兜底，
+           地址不写进游戏逻辑。开发模式用 <code>?dev=1</code> 打开，能直接跳楼层、调波次、开无敌，
+           自测一遍 30 层不用真的打三小时。</p>
+        <p>验收标准是我自己定的：连续打三层不掉帧、每层第七波必须能看出「这层不一样」、
+           手机横屏下所有按钮单手够得到。</p>
+      </div>
+      <div>
+        <div class="stack">
+          <span>Phaser 3</span>
+          <span>TypeScript</span>
+          <span>Vite</span>
+          <span>Vitest</span>
+          <span>Builda SDK</span>
+          <span>分组懒加载</span>
+          <span>像素美术规范</span>
+        </div>
+        <p style="margin-top:26px;font-size:13.5px;color:var(--muted);line-height:1.8">
+          说明：试玩版素材由 AI 生成并按统一像素规格后处理，代码由 AI 协作完成，
+          关卡结构、数值与所有界面决策由我完成。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="wrap pager">
+    <a href="../meow/"><small>下一件</small><b>喵喵音阶森林 →</b></a>
+    <a href="../#works"><small>Index</small><b>全部作品</b></a>
+  </nav>
+
+  <footer class="wrap foot">
+    <div>卢璐 · 产品经理｜2648488512@qq.com</div>
+    <div><a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu</a></div>
+  </footer>
+
+</main>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
