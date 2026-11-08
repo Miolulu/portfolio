@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>静照院 · 卢璐作品集</title>
+<meta name="description" content="3D 禅意小院：合掌、跪拜、上香、点灯、撸猫、荷池抛币、扫落叶，同房间真人在线。Three.js + Blender 自建模型 + WebSocket 多人层。">
+<link rel="stylesheet" href="../assets/doc.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316150f'/%3E%3Crect x='9' y='9' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='15' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='21' width='9' height='2' fill='%23faf8f4'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="bar__back" href="../">← 作品集</a>
+    <span class="bar__name">卢璐 · PORTFOLIO</span>
+    <nav class="bar__nav">
+      <a href="https://miolulu.github.io/zen-court/" target="_blank" rel="noopener">在线逛 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="hero__no">作品 05 / WEB 3D</p>
+    <h1>静照院<small>Zen Court</small></h1>
+    <ul class="tags">
+      <li>3D 禅意小院</li><li>实时多人</li><li>Blender 建模</li><li>可试玩</li>
+    </ul>
+    <p class="hero__sub">一座可以走进去的 3D 小庙：合掌、跪拜、上香、点灯、撸猫、抛硬币、扫落叶，七件事都是真的能做。</p>
+
+    <dl class="spec">
+      <div><dt>平台</dt><dd>桌面与移动端 Web</dd></div>
+      <div><dt>技术</dt><dd>Three.js r187 · Blender · WebSocket · 原生 JS</dd></div>
+      <div><dt>状态</dt><dd>线上可玩</dd></div>
+    </dl>
+
+    <div class="cta">
+      <a class="btn" href="https://miolulu.github.io/zen-court/" target="_blank" rel="noopener">在线逛 ↗</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/zen-court" target="_blank" rel="noopener">源码</a>
+    </div>
+  </section>
+
+  <figure class="shot">
+    <img src="../assets/hd/zen-yard.webp" alt="静照院庭院全景：敞口木构大殿、殿内金佛、成排拜垫、居中的荷池与金蟾，四周松林环抱" width="1600" height="900">
+    <figcaption><b>庭院</b><span>敞口木构大殿坐北朝南，殿内大佛与殿前 5×10 张拜垫同框，荷池落在院子正中</span></figcaption>
+  </figure>
+
+  <section class="sec body">
+    <h2>七件小事</h2>
+    <p>点自己合掌，点拜垫跪拜，点香炉上一炷香（三炷封炉），点长明灯写一个愿望点亮它，蹲下来顺一顺庙里的猫，往荷池金蟾嘴里抛一枚硬币（不限次数，投中招财进宝），再把院子里的落叶堆扫一扫——每件事都有独立的放大交互界面，不是按钮，是动作。</p>
+    <p>所有东西都要先走过去才能碰：悬停会亮起一圈柔光和标签，隔着半个院子点不到。</p>
+
+    <h2 style="margin-top:34px">同房间真人</h2>
+    <p>进庙随机赐一个两字法号，同修以蓝衣小沙弥的样子实时走来走去，合掌跪拜互相可见，满员 50 席。公开链接是单人巡游模式；本地跑 <code>node server.js</code> 就是同房间多人。</p>
+
+    <h2 style="margin-top:34px">模型与美术</h2>
+    <p>小沙弥、金蟾、坐佛、蒲团四件模型全部用 Blender 按理想参考图手工建件再导出 GLB（拱背金蟾口衔铜钱、双层眼睑；小和尚 A 形袍、垂坠喇叭袖、捧珠合十）；场景是绘本水彩远山加程序化松林银杏，贴图全部程序生成，没有外部素材依赖。</p>
+  </section>
+
+  <section class="sec sec--line">
+    <h2>界面</h2>
+    <div class="gal">
+      <div class="gal gal--two" style="margin-top:0">
+        <figure>
+          <img src="../assets/hd/zen-hall.webp" alt="殿前视角：大殿匾额「静照院」，檐下红灯笼一排，殿内金佛结跏趺坐" width="1600" height="900" loading="lazy">
+          <figcaption><b>殿前</b><span>匾额、椽子、瓦当、红灯笼，大佛就坐在敞开的殿里</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/hd/zen-pond.webp" alt="荷池特写：金蟾蹲在池心石上，口衔铜钱，小沙弥站在东岸" width="1600" height="900" loading="lazy">
+          <figcaption><b>荷池</b><span>金蟾蹲在池心石上，点它就抛硬币，硬币会真的沉到池底</span></figcaption>
+        </figure>
+      </div>
+      <div class="gal gal--one" style="margin-top:18px">
+        <figure>
+          <img src="../assets/hd/zen-west.webp" alt="院子西侧：银杏与松树之间落着金黄的叶子堆，猫窝在树下" width="1600" height="900" loading="lazy">
+          <figcaption><b>院西</b><span>银杏叶落成一小堆一小堆，走近扫一扫，过一会儿又在别处落出一堆</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager">
+    <a href="../ember/"><small>PREV</small><b>← 余烬</b></a>
+    <a href="../"><small>NEXT</small><b>作品集首页 →</b></a>
+  </nav>
+
+  <footer class="foot">
+    <b>卢璐</b><span>产品经理</span>
+    <span class="sp"></span>
+    <a href="mailto:2648488512@qq.com">2648488512@qq.com</a>
+    <a href="https://github.com/Miolulu" target="_blank" rel="noopener">github.com/Miolulu ↗</a>
+  </footer>
+
+</main>
+</body>
+</html>
