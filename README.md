@@ -1,6 +1,6 @@
 # 卢璐 · 作品集
 
-四件作品的展示页，全部可在线打开：
+六件作品的展示页，全部可在线打开：
 
 | 作品 | 页面 | 在线体验 |
 |---|---|---|
@@ -8,6 +8,8 @@
 | 喵喵音阶森林 | `/meow/` | 网页互动音乐应用 |
 | 树语 TreeWhisper | `/tree/` | 情绪树洞社区 |
 | 余烬 Embers | `/ember/` | 科幻长篇在线阅读器 |
+| 静照院 | `/zen/` | 3D 禅意小院可逛 |
+| 骑马与砍杀中文站 | `/mountblade/` | 国内最大骑砍社区 · 官网 |
 
 - 首页：`https://miolulu.github.io/portfolio/`
 - 目录结构：`docs/` 为站点根（GitHub Pages · main /docs），`docs/assets/` 放共用样式与截图
