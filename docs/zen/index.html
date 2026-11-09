@@ -44,7 +44,7 @@
 
   <figure class="shot">
     <img src="../assets/hd/zen-yard.webp" alt="静照院庭院全景：敞口木构大殿、殿内金佛、成排拜垫、居中的荷池与金蟾，四周松林环抱" width="1600" height="900">
-    <figcaption><b>庭院</b><span>敞口木构大殿坐北朝南，殿内大佛与殿前 5×10 张拜垫同框，荷池落在院子正中</span></figcaption>
+    <figcaption><b>庭院</b><span>Blender 精建的敞口木构大殿坐北朝南，殿内大佛与殿前 6×3 席礼佛位同框，荷池落在院子正中</span></figcaption>
   </figure>
 
   <section class="sec body">
@@ -60,6 +60,11 @@
     <p>六个放大交互界面（木鱼、念珠、长明灯、上香、撸猫、抛币）不再用 CSS 另画一套：直接复用场景里的建模函数与同一套灯光，离屏渲染成透明 PNG。放大后的猫、金蟾、香炉，和院子里看到的是同一个模型。</p>
     <p>另附 <code>docs/art-prompt-pack-v1.md</code>：风格锚点、色板、变量槽位表、三视图一致性规则与三级降级方案，供后续扩批素材时锁定风格。</p>
 
+    <h2 style="margin-top:34px">场景重建 v3</h2>
+    <p>第三轮把整座静态环境推倒重来。此前的大殿、屋顶、台基、树与铺装其实是 61 个基础几何体拼出来的占位模型，而小沙弥、金蟾、坐佛这些 GLB 反倒已经很精细——两者精度差一个数量级，光影再怎么调都显得「不像成品」。</p>
+    <p>于是用 Blender 4.2.14 重新建了整座佛院，导出单一 <code>court.glb</code>：举折起翘的曲面屋顶、51 垄筒瓦与瓦当滴水、正脊垂脊与鸱吻脊兽、带柱础收分的车削柱、层级斗拱、棂条格扇、须弥座台基与望柱栏板、石板铺装与中轴御道、分叉主干的松与银杏、六角石灯、荷池石沿。约 6.2 万三角面，建模脚本随仓库提供，可一键重建。</p>
+    <p>拜垫、香炉、长明灯、猫、金蟾与大佛仍是代码里的动态对象，坐标一个没动——换了整座殿，交互热点零重接。顺带把同修出生点铺成 4 列 3 排、法号牌加屏幕空间避让，几个人不再叠在一起。</p>
+
     <h2 style="margin-top:34px">手机端</h2>
     <p>竖屏 / 横屏各有独立断点：HUD 与工具按钮不再重叠，放大主体按可用宽高放大，念珠改「上下滑动」手势；触摸点击带 44px 命中容差，禁掉了误触发的悬停提示与系统蓝色点击框，心愿输入框随软键盘上移。竖屏切专用相机机位，渲染分辨率按设备降档。</p>
   </section>
@@ -67,6 +72,12 @@
   <section class="sec sec--line">
     <h2>界面</h2>
     <div class="gal">
+      <div class="gal gal--one" style="margin-top:0">
+        <figure>
+          <img src="../assets/hd/zen-hall-v3.webp" alt="Blender 重建后的大殿：举折曲面瓦顶、鸱吻、斗拱、棂条格扇、须弥座台基" width="1146" height="437" loading="lazy">
+          <figcaption><b>重建后的大殿</b><span>举折起翘屋面 · 筒瓦瓦当 · 层级斗拱 · 棂条格扇 · 须弥座台基</span></figcaption>
+        </figure>
+      </div>
       <div class="gal gal--two" style="margin-top:0">
         <figure>
           <img src="../assets/hd/zen-hall.webp" alt="殿前视角：大殿匾额「静照院」，檐下红灯笼一排，殿内金佛结跏趺坐" width="1600" height="900" loading="lazy">
