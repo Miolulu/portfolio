@@ -55,8 +55,13 @@
     <h2 style="margin-top:34px">同房间真人</h2>
     <p>进庙随机赐一个两字法号，同修以蓝衣小沙弥的样子实时走来走去，合掌跪拜互相可见，满员 50 席——「在线逛」的链接就是真实多人在线（WebSocket 同房间），打开两个标签页就能互相看见。GitHub 仓库里附了同一套 <code>server.js</code>，本地 <code>node server.js</code> 也能开一间自己的庙。</p>
 
-    <h2 style="margin-top:34px">模型与美术</h2>
-    <p>小沙弥、金蟾、坐佛、蒲团四件模型全部用 Blender 按理想参考图手工建件再导出 GLB（拱背金蟾口衔铜钱、双层眼睑；小和尚 A 形袍、垂坠喇叭袖、捧珠合十）；场景是绘本水彩远山加程序化松林银杏，贴图全部程序生成，没有外部素材依赖。</p>
+    <h2 style="margin-top:34px">模型与美术 v2</h2>
+    <p>小沙弥、金蟾、坐佛、蒲团四件模型按参考图手工建件导出 GLB。第二轮把整体收敛成「清雅水墨国风 + 低饱和 3+1 色」：宣纸米 / 墨青 / 低饱和朱砂为主，旧金只作极少勾边；收掉过曝平光，把唯一亮点留给佛前，松林改成棱面块叶，蒲团错列并做四档布色微差。</p>
+    <p>六个放大交互界面（木鱼、念珠、长明灯、上香、撸猫、抛币）不再用 CSS 另画一套：直接复用场景里的建模函数与同一套灯光，离屏渲染成透明 PNG。放大后的猫、金蟾、香炉，和院子里看到的是同一个模型。</p>
+    <p>另附 <code>docs/art-prompt-pack-v1.md</code>：风格锚点、色板、变量槽位表、三视图一致性规则与三级降级方案，供后续扩批素材时锁定风格。</p>
+
+    <h2 style="margin-top:34px">手机端</h2>
+    <p>竖屏 / 横屏各有独立断点：HUD 与工具按钮不再重叠，放大主体按可用宽高放大，念珠改「上下滑动」手势；触摸点击带 44px 命中容差，禁掉了误触发的悬停提示与系统蓝色点击框，心愿输入框随软键盘上移。竖屏切专用相机机位，渲染分辨率按设备降档。</p>
   </section>
 
   <section class="sec sec--line">
@@ -76,6 +81,22 @@
         <figure>
           <img src="../assets/hd/zen-west.webp" alt="院子西侧：银杏与松树之间落着金黄的叶子堆，猫窝在树下" width="1600" height="900" loading="lazy">
           <figcaption><b>院西</b><span>银杏叶落成一小堆一小堆，走近扫一扫，过一会儿又在别处落出一堆</span></figcaption>
+        </figure>
+      </div>
+      <div class="gal gal--two" style="margin-top:18px">
+        <figure>
+          <img src="../assets/hd/zen-concept.webp" alt="主视觉概念稿：清雅水墨国风的小院，淡墨远山、歪干松、敞口佛殿与荷池" width="1200" height="728" loading="lazy">
+          <figcaption><b>主视觉概念稿</b><span>锁定「清雅水墨 + 低饱和 3+1 色」的风格锚点</span></figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/hd/zen-mobile.webp" alt="手机竖屏：HUD 与工具按钮错开，大殿、拜垫、荷池完整入画" width="780" height="1688" loading="lazy">
+          <figcaption><b>手机竖屏</b><span>独立断点与专用机位，四角 UI 不再互相挤压</span></figcaption>
+        </figure>
+      </div>
+      <div class="gal gal--one" style="margin-top:18px">
+        <figure>
+          <img src="../assets/hd/zen-sprites.webp" alt="三个放大面板：木鱼、撸猫、抛币，主体均为 3D 同源渲染图" width="940" height="650" loading="lazy">
+          <figcaption><b>3D 同源放大面板</b><span>木鱼 / 撸猫 / 抛币：放大后和院子里是同一个模型，不再各画一套</span></figcaption>
         </figure>
       </div>
     </div>
