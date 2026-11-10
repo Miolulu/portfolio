@@ -132,6 +132,17 @@ a{color:inherit;text-decoration:none}
   .phones--stack{--cols:1}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* 静照院增强：主视觉 + 功能网格 */
+.ph--hero{width:100%;margin:0 0 clamp(16px,2vw,26px)}
+.ph--hero img{border-radius:3px}
+.zen-feat{list-style:none;margin:0 0 clamp(22px,2.6vw,34px);padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.zen-feat li{background:var(--bg);padding:14px 15px;min-width:0}
+.zen-feat b{display:block;font-size:13.5px;font-weight:600;letter-spacing:.02em;margin-bottom:5px}
+.zen-feat span{font-size:12px;color:var(--ink-2);line-height:1.6}
+@media (max-width:820px){.zen-feat{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -293,8 +304,23 @@ a{color:inherit;text-decoration:none}
         </p>
       </div>
 
+      <figure class="ph ph--hero">
+        <img src="assets/hd/zen-hero.webp" alt="静照院主视觉：黄昏暖光下的低多边形禅院，大殿金佛、居中荷池金蟾、檐下红灯笼、同修与落雪飘瓣" width="1500" height="900" loading="lazy">
+      </figure>
+
+      <ul class="zen-feat">
+        <li><b>合掌跪拜</b><span>走到佛前，点自己合掌、点拜垫跪拜，动作同修可见</span></li>
+        <li><b>上香点灯</b><span>三炷封炉，写一句心愿点亮长明灯</span></li>
+        <li><b>撸猫</b><span>蹲下顺一顺庙里的猫，它有自己的名字与情绪</span></li>
+        <li><b>荷池抛币</b><span>往金蟾嘴里抛硬币，投中招财，硬币真沉池底</span></li>
+        <li><b>扫落叶</b><span>银杏叶落成堆，扫一扫，过会儿又落别处</span></li>
+        <li><b>同修在线</b><span>随机法号，蓝衣小沙弥实时走动，满员 50 席</span></li>
+        <li><b>3D 自建模型</b><span>Blender 重建整座佛院，约 6.2 万面单一 GLB</span></li>
+        <li><b>手机端</b><span>竖横屏独立断点，44px 命中容差，专属机位</span></li>
+      </ul>
+
       <div class="phones phones--c3 phones--stack">
-        <figure class="ph"><img src="assets/hd/zen-yard.webp" alt="庭院全景：敞口木构大殿、殿内金佛、成排拜垫、居中荷池金蟾，四周松林环抱" width="1600" height="900"></figure>
+        <figure class="ph"><img src="assets/hd/zen-yard.webp" alt="庭院全景：敞口木构大殿、殿内金佛、成排拜垫、居中荷池金蟾，四周松林环抱" width="1600" height="900" loading="lazy"></figure>
         <figure class="ph"><img src="assets/hd/zen-hall.webp" alt="殿前视角：匾额「静照院」，檐下红灯笼一排，殿内金佛结跏趺坐" width="1600" height="900" loading="lazy"></figure>
         <figure class="ph"><img src="assets/hd/zen-pond.webp" alt="荷池特写：金蟾蹲在池心石上口衔铜钱，小沙弥站在东岸" width="1600" height="900" loading="lazy"></figure>
       </div>
