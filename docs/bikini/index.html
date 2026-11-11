@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>比奇堡沉浸式小镇 · 卢璐作品集</title>
+<meta name="description" content="2.5D 手绘同人网页游戏：在比奇堡散步、串门、翻找、玩小游戏。原生 JS + 手绘位图资产管线，双 AI 协作产出。">
+<link rel="stylesheet" href="../assets/doc.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316150f'/%3E%3Crect x='9' y='9' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='15' width='14' height='2' fill='%23faf8f4'/%3E%3Crect x='9' y='21' width='9' height='2' fill='%23faf8f4'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar__in">
+    <a class="bar__back" href="../">← 作品集</a>
+    <span class="bar__name">卢璐 · PORTFOLIO</span>
+    <nav class="bar__nav">
+      <a href="https://bikini-bottom-world.app.workbuddy.host/?sharecode=BSQ4BPHGH3" target="_blank" rel="noopener">在线试玩 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="hero__no">作品 07 / WEB GAME</p>
+    <h1>比奇堡沉浸式小镇<small>Bikini Bottom · 一天</small></h1>
+    <ul class="tags">
+      <li>2.5D 网页游戏</li><li>等角海底小镇</li><li>手绘同人</li><li>可试玩</li>
+    </ul>
+    <p class="hero__sub">一个能走进去的海底小镇：14 间手绘房间、几十个能翻能捡的物件、三个小游戏，和一个会在你靠近时亮起来的世界。</p>
+
+    <dl class="spec">
+      <div><dt>平台</dt><dd>桌面与移动端 Web</dd></div>
+      <div><dt>技术</dt><dd>原生 JS · 手绘位图资产管线 · localStorage 存档</dd></div>
+      <div><dt>状态</dt><dd>线上可玩（v12）</dd></div>
+    </dl>
+
+    <div class="cta">
+      <a class="btn" href="https://bikini-bottom-world.app.workbuddy.host/?sharecode=BSQ4BPHGH3" target="_blank" rel="noopener">在线试玩 ↗</a>
+      <a class="btn btn--ghost" href="https://github.com/Miolulu/crossing-bikini-bottom" target="_blank" rel="noopener">源码</a>
+    </div>
+  </section>
+
+  <section class="sec body">
+    <h2>一句话定位</h2>
+    <p>把大家熟悉的比奇堡，做成可以在里面散步、串门、翻抽屉、玩小游戏的 2.5D 网页小镇。不是还原动画，是借这个海底世界搭一套可交互的轻等角场景。</p>
+
+    <h2 style="margin-top:34px">它是什么</h2>
+    <p>14 间手绘房间——蟹堡王、凤梨屋、石头屋、章鱼哥家、水母田……每间都塞满可点的小道具；世界大地图上能走来走去，靠近门、居民或物件会亮起标签和一圈柔光。三个嵌入式小玩法：捉水母（打地鼠式）、吹泡泡、空手道连击。翻找出来的零碎和打小游戏赢的战利品，都会收进「藏品册」。</p>
+    <p>资产全部是手绘位图，没有用 CSS 或矢量现拼——从角色立绘到房间地板、再到界面图标，都是同一套手绘语言。</p>
+
+    <h2 style="margin-top:34px">几个判断（做的时候纠结什么）</h2>
+    <p><b>画风。</b>原作是粗黑歪扭描线 + 不透明平涂 + 水彩颗粒做旧的扁平 2D 卡通风，不是精致 3D。一开始被生图工具带偏成了「微缩手办」，推翻重做，最终锁死「手绘语言 + 轻等角 + 形体按原作纠正」。</p>
+    <p><b>抠图。</b>生图工具只出纯色底还带水印，没法直接要透明。最后定下：提示词锚点一个字不改，透明底一律由后处理用连通域 flood fill 保证，绝不为了迁就工具去改写画风。</p>
+    <p><b>合规。</b>这是非官方同人：神似非形似，提示词里不放作品名、角色名、商标和招牌文字，页面也标注「与权利方无关」。</p>
+
+    <h2 style="margin-top:34px">怎么做的</h2>
+    <p><b>资产管线。</b>锁风格锚点 → 批量生成 → 程序化抠图去水印 → 裁紧居中 → 出 1×/2×/solid 三件套，每个批次都跑自动质检（边距、透明占比、水印检测），确保 200+ 文件风格一致。</p>
+    <p><b>交互层。</b>用原生 JS 写：世界相机跟随、点地行走（手机端）、物件翻找/拾取的心跳换图、掉落物飞入口袋、轻量 localStorage 存档让进度留在本机。手机端把写死的「按 E / WASD」全换成触屏说法，对话加了关闭钮，进入小游戏时隐藏世界导航以免挡住点击。</p>
+
+    <h2 style="margin-top:34px">非官方同人声明</h2>
+    <p>本页为个人作品集展示用的非官方同人创作，角色与场景灵感来自《海绵宝宝》（SpongeBob SquarePants），与 Paramount / Nickelodeon 及任何权利方无关联，不含任何商业用途。</p>
+  </section>
+
+</main>
+
+</body>
+</html>
